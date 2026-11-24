@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: probe aa model pages
+      - name: probe aa leaderboards models page
         run: python .github/probe_official.py

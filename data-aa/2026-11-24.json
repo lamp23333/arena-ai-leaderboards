@@ -1,7 +1,7 @@
 {
  "date": "2026-11-24",
  "source": "page",
- "fetched_at": "2026-11-24T13:23:23Z",
+ "fetched_at": "2026-11-24T13:24:57Z",
  "doc": "https://artificialanalysis.ai/data-api",
  "model_count": 127,
  "models": [
@@ -792,7 +792,7 @@
   {
    "model": "Tencent Hy4",
    "model_display": "Tencent Hy4",
-   "vendor": "",
+   "vendor": "tencent",
    "index": 34.56,
    "price_in": 0.834,
    "price_out": 2.501,
@@ -1048,7 +1048,7 @@
   {
    "model": "JoyAI-VL-Preview",
    "model_display": "JoyAI-VL-Preview",
-   "vendor": "",
+   "vendor": "jd",
    "index": 28.04,
    "price_in": null,
    "price_out": null,
@@ -1192,7 +1192,7 @@
   {
    "model": "Agnes 2.5 Pro Theta",
    "model_display": "Agnes 2.5 Pro Theta",
-   "vendor": "",
+   "vendor": "agnesai",
    "index": 24.03,
    "price_in": 0.1,
    "price_out": 0.3,
@@ -1464,7 +1464,7 @@
   {
    "model": "Beam 1.0",
    "model_display": "Beam 1.0",
-   "vendor": "",
+   "vendor": "reflection",
    "index": 17.73,
    "price_in": 0.4,
    "price_out": 1.2,
@@ -1512,7 +1512,7 @@
   {
    "model": "Solar Pro 4",
    "model_display": "Solar Pro 4",
-   "vendor": "",
+   "vendor": "upstage",
    "index": 14.16,
    "price_in": 0.3,
    "price_out": 1.2,
@@ -1816,7 +1816,7 @@
   {
    "model": "LFM3-1.7B",
    "model_display": "LFM3-1.7B",
-   "vendor": "",
+   "vendor": "liquid",
    "index": 5.99,
    "price_in": 0.08,
    "price_out": 0.2,
@@ -1976,7 +1976,7 @@
   {
    "model": "North Mini Code",
    "model_display": "North Mini Code",
-   "vendor": "",
+   "vendor": "cohere",
    "index": 3.42,
    "price_in": 0.0,
    "price_out": 0.0,
@@ -2024,7 +2024,7 @@
   {
    "model": "LFM3-VL-2B",
    "model_display": "LFM3-VL-2B",
-   "vendor": "",
+   "vendor": "liquid",
    "index": 1.71,
    "price_in": 0.1,
    "price_out": 0.5,

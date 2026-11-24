@@ -1,76 +1,54 @@
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
 
-UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"}
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+      "Accept-Language": "en-US,en;q=0.9"}
 
 
-def get(u, t=40):
-    req = urllib.request.Request(u, headers=UA)
-    with urllib.request.urlopen(req, timeout=t) as r:
-        return r.read()
-
-
-print("### HF org info ###")
-try:
-    org = json.loads(get("https://huggingface.co/api/organizations/lmarena-ai"))
-    for k in ["name", "fullname", "isVerified", "isOrg", "isUser", "numUsers", "numModels", "numDatasets", "createdAt"]:
-        if k in org:
-            print("  ORG", k, "=", org[k])
-except Exception as e:
-    print("  ORG_ERR", type(e).__name__, str(e)[:120])
-
-print("### dataset meta ###")
-try:
-    ds = json.loads(get("https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset"))
-    for k in ["id", "author", "gated", "private", "downloads", "likes", "lastModified", "createdAt"]:
-        if k in ds:
-            print("  DS", k, "=", ds[k])
-    cd = ds.get("cardData") or {}
-    print("  CARD_KEYS", list(cd.keys())[:12])
-    for k in ("license", "source", "pretty_name", "organization"):
-        if k in cd:
-            print("  CARD", k, "=", cd[k])
-except Exception as e:
-    print("  DS_ERR", type(e).__name__, str(e)[:120])
-
-print("### card text: lines mentioning official / arena ###")
-try:
-    card = get("https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/main/README.md").decode("utf-8", "replace")
-    for line in card.splitlines():
-        low = line.lower()
-        if any(k in low for k in ("official", "arena.ai", "lmarena", "maintained", "source of truth", "api")):
-            print("  T", line.strip()[:180])
-except Exception as e:
-    print("  CARD_ERR", type(e).__name__, str(e)[:120])
-
-print("### leaderboard sites reachability ###")
-SITES = [
-    "https://lmarena.ai/leaderboard",
-    "https://artificialanalysis.ai/",
-    "https://livebench.ai/",
-    "https://www.swebench.com/",
-    "https://crfm.stanford.edu/helm/",
-    "https://rank.opencompass.org.cn/",
-    "https://www.superclueai.com/",
-    "https://scale.com/leaderboard",
-    "https://www.datalearner.com/leaderboards",
-    "https://vals.ai/",
-    "https://epoch.ai/benchmarks",
-    "https://designarena.ai/",
-]
-for u in SITES:
+def fetch(u, extra=None, t=40):
+    h = dict(UA)
+    if extra:
+        h.update(extra)
+    req = urllib.request.Request(u, headers=h)
     try:
-        req = urllib.request.Request(u, headers=UA)
-        with urllib.request.urlopen(req, timeout=25) as r:
-            body = r.read()
-            print("  SITE", r.status, len(body), u)
+        with urllib.request.urlopen(req, timeout=t) as r:
+            return r.status, r.read()
     except urllib.error.HTTPError as e:
-        print("  SITE", e.code, 0, u)
+        return e.code, e.read()
     except Exception as e:
-        print("  SITE", "ERR", type(e).__name__, u)
+        return "ERR", str(e).encode()
+
+
+print("### AA endpoints ###")
+for u, extra in [
+    ("https://artificialanalysis.ai/api/v2/data/llms/models", None),
+    ("https://artificialanalysis.ai/api/v2/data/llms/models", {"x-api-key": "demo"}),
+    ("https://artificialanalysis.ai/api/v2/data/llms/creators", None),
+]:
+    st, body = fetch(u, extra)
+    tag = "NOAUTH" if not extra else ("APIKEY=" + extra.get("x-api-key", ""))
+    print("  AA", tag, st, len(body), u.split("ai/", 1)[-1])
+    print("     head:", body[:200].decode("utf-8", "replace").replace("\n", " "))
+
+print("### AA homepage scan ###")
+st, body = fetch("https://artificialanalysis.ai/")
+print("  page", st, len(body))
+txt = body.decode("utf-8", "replace")
+for probe in ["__next_f", "intelligenceIndex", "intelligence_index", "x-api-key", "api/v2", "median_output_tokens", "self.__next_f"]:
+    print("  COUNT", probe, txt.count(probe))
+paths = sorted(set(re.findall(r'"(/api/[a-zA-Z0-9_\-/]*)"', txt)))[:20]
+print("  api paths:", paths)
+print("### arena sitemap locs ###")
+st, body = fetch("https://arena.ai/sitemap.xml")
+print("  sitemap", st, len(body))
+locs = re.findall(r"<loc>([^<]+)</loc>", body.decode("utf-8", "replace"))
+print("  LOCS", len(locs))
+for l in locs:
+    print("   S", l.replace("https://arena.ai", ""))
 
 sys.stdout.flush()
 os._exit(0)

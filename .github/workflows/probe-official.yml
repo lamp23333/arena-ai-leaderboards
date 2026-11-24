@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: check hf org and leaderboard sites
+      - name: probe aa api and arena sitemap
         run: python .github/probe_official.py

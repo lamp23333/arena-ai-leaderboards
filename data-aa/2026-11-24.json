@@ -1,7 +1,7 @@
 {
  "date": "2026-11-24",
  "source": "page",
- "fetched_at": "2026-11-24T13:09:52Z",
+ "fetched_at": "2026-11-24T13:10:48Z",
  "doc": "https://artificialanalysis.ai/data-api",
  "model_count": 88,
  "models": [
@@ -18,6 +18,7 @@
    "context": null,
    "effort": null,
    "name_full": "Claude Fable 5.2",
+   "variants": 1,
    "rank": 1
   },
   {
@@ -33,6 +34,7 @@
    "context": 1000000,
    "effort": "xhigh",
    "name_full": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+   "variants": 1,
    "rank": 2
   },
   {
@@ -48,6 +50,7 @@
    "context": null,
    "effort": null,
    "name_full": "GPT-6.2 Astra",
+   "variants": 1,
    "rank": 3
   },
   {
@@ -63,6 +66,7 @@
    "context": 1000000,
    "effort": "high",
    "name_full": "Claude Fable 5.2 (High, Default Fallback)",
+   "variants": 1,
    "rank": 4
   },
   {
@@ -78,6 +82,7 @@
    "context": 1000000,
    "effort": "xhigh",
    "name_full": "GPT-6.2 Astra (Xhigh)",
+   "variants": 1,
    "rank": 5
   },
   {
@@ -93,6 +98,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemini 4 Neon",
+   "variants": 1,
    "rank": 6
   },
   {
@@ -108,6 +114,7 @@
    "context": 1000000,
    "effort": "high",
    "name_full": "GPT-6.2 Astra (High)",
+   "variants": 1,
    "rank": 7
   },
   {
@@ -123,6 +130,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemini 4 Carbon",
+   "variants": 1,
    "rank": 8
   },
   {
@@ -138,6 +146,7 @@
    "context": 1000000,
    "effort": "high",
    "name_full": "Gemini 4 Neon (High)",
+   "variants": 1,
    "rank": 9
   },
   {
@@ -153,6 +162,7 @@
    "context": null,
    "effort": null,
    "name_full": "Claude Opus 5.5",
+   "variants": 1,
    "rank": 10
   },
   {
@@ -168,6 +178,7 @@
    "context": 1000000,
    "effort": "medium",
    "name_full": "Gemini 4 Carbon (Medium)",
+   "variants": 1,
    "rank": 11
   },
   {
@@ -183,6 +194,7 @@
    "context": 1000000,
    "effort": "xhigh",
    "name_full": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+   "variants": 1,
    "rank": 12
   },
   {
@@ -198,6 +210,7 @@
    "context": null,
    "effort": null,
    "name_full": "GPT-6.2 Sol",
+   "variants": 1,
    "rank": 13
   },
   {
@@ -213,6 +226,7 @@
    "context": 1000000,
    "effort": "medium",
    "name_full": "GPT-6.2 Astra (Medium)",
+   "variants": 1,
    "rank": 14
   },
   {
@@ -228,6 +242,7 @@
    "context": 1000000,
    "effort": "medium",
    "name_full": "Claude Fable 5.2 (Medium, Default Fallback)",
+   "variants": 1,
    "rank": 15
   },
   {
@@ -243,6 +258,7 @@
    "context": 1000000,
    "effort": "xhigh",
    "name_full": "GPT-6.2 Sol (Xhigh)",
+   "variants": 1,
    "rank": 16
   },
   {
@@ -258,6 +274,7 @@
    "context": 1000000,
    "effort": "high",
    "name_full": "GPT-6.2 Sol (High)",
+   "variants": 1,
    "rank": 17
   },
   {
@@ -273,6 +290,7 @@
    "context": 1000000,
    "effort": "medium",
    "name_full": "Gemini 4 Neon (Medium)",
+   "variants": 1,
    "rank": 18
   },
   {
@@ -288,6 +306,7 @@
    "context": null,
    "effort": null,
    "name_full": "Claude Sonnet 5.5",
+   "variants": 1,
    "rank": 19
   },
   {
@@ -303,6 +322,7 @@
    "context": 1000000,
    "effort": "low",
    "name_full": "Gemini 4 Carbon (Low)",
+   "variants": 1,
    "rank": 20
   },
   {
@@ -318,6 +338,7 @@
    "context": 1000000,
    "effort": "low",
    "name_full": "Claude Fable 5.2 (Low, Default Fallback)",
+   "variants": 1,
    "rank": 21
   },
   {
@@ -333,6 +354,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemini 4 Hydrogen",
+   "variants": 1,
    "rank": 22
   },
   {
@@ -348,6 +370,7 @@
    "context": 1000000,
    "effort": "medium",
    "name_full": "GPT-6.2 Sol (Medium)",
+   "variants": 1,
    "rank": 23
   },
   {
@@ -363,6 +386,7 @@
    "context": 1000000,
    "effort": "high",
    "name_full": "Claude Opus 5.5 (High, Default Fallback)",
+   "variants": 1,
    "rank": 24
   },
   {
@@ -378,6 +402,7 @@
    "context": null,
    "effort": null,
    "name_full": "GPT-6.1 Terra",
+   "variants": 1,
    "rank": 25
   },
   {
@@ -393,6 +418,7 @@
    "context": 1000000,
    "effort": "high",
    "name_full": "Gemini 4 Hydrogen (High)",
+   "variants": 1,
    "rank": 26
   },
   {
@@ -408,6 +434,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemini 4 Argon",
+   "variants": 1,
    "rank": 27
   },
   {
@@ -423,6 +450,7 @@
    "context": null,
    "effort": null,
    "name_full": "Muse Wonder Full",
+   "variants": 1,
    "rank": 28
   },
   {
@@ -438,6 +466,7 @@
    "context": null,
    "effort": null,
    "name_full": "Kimi K3.1 Pro",
+   "variants": 1,
    "rank": 29
   },
   {
@@ -453,6 +482,7 @@
    "context": 1000000,
    "effort": "low",
    "name_full": "GPT-6.2 Astra (Low)",
+   "variants": 1,
    "rank": 30
   },
   {
@@ -468,6 +498,7 @@
    "context": null,
    "effort": null,
    "name_full": "Muse Wonder",
+   "variants": 1,
    "rank": 31
   },
   {
@@ -483,6 +514,7 @@
    "context": null,
    "effort": null,
    "name_full": "Qwen4 Max",
+   "variants": 1,
    "rank": 32
   },
   {
@@ -498,6 +530,7 @@
    "context": null,
    "effort": null,
    "name_full": "Claude Haiku 5.5",
+   "variants": 1,
    "rank": 33
   },
   {
@@ -513,6 +546,7 @@
    "context": null,
    "effort": null,
    "name_full": "Muse Ember",
+   "variants": 1,
    "rank": 34
   },
   {
@@ -528,6 +562,7 @@
    "context": null,
    "effort": null,
    "name_full": "Grok 4.7",
+   "variants": 1,
    "rank": 35
   },
   {
@@ -543,6 +578,7 @@
    "context": null,
    "effort": null,
    "name_full": "Tencent Hy4",
+   "variants": 1,
    "rank": 36
   },
   {
@@ -558,6 +594,7 @@
    "context": null,
    "effort": null,
    "name_full": "DeepSeek V4.1 Flash 1017",
+   "variants": 1,
    "rank": 37
   },
   {
@@ -573,6 +610,7 @@
    "context": null,
    "effort": null,
    "name_full": "GLM-5.3",
+   "variants": 1,
    "rank": 38
   },
   {
@@ -588,6 +626,7 @@
    "context": null,
    "effort": null,
    "name_full": "Inkling 2 Small",
+   "variants": 1,
    "rank": 39
   },
   {
@@ -603,6 +642,7 @@
    "context": null,
    "effort": null,
    "name_full": "MiMo-V2.6-Pro",
+   "variants": 1,
    "rank": 40
   },
   {
@@ -618,6 +658,7 @@
    "context": null,
    "effort": null,
    "name_full": "Ling 3.1 Flash 1019",
+   "variants": 1,
    "rank": 41
   },
   {
@@ -633,6 +674,7 @@
    "context": null,
    "effort": null,
    "name_full": "MiniMax-M3.1-Flash",
+   "variants": 1,
    "rank": 42
   },
   {
@@ -648,6 +690,7 @@
    "context": null,
    "effort": null,
    "name_full": "Qwen3.8-Flash-Next",
+   "variants": 1,
    "rank": 43
   },
   {
@@ -663,6 +706,7 @@
    "context": null,
    "effort": null,
    "name_full": "Step 5 Preview",
+   "variants": 1,
    "rank": 44
   },
   {
@@ -678,6 +722,7 @@
    "context": null,
    "effort": null,
    "name_full": "JoyAI-VL-Preview",
+   "variants": 1,
    "rank": 45
   },
   {
@@ -693,6 +738,7 @@
    "context": null,
    "effort": null,
    "name_full": "GPT-6 Luna",
+   "variants": 1,
    "rank": 46
   },
   {
@@ -708,6 +754,7 @@
    "context": null,
    "effort": null,
    "name_full": "GLM-5.3-Flash",
+   "variants": 1,
    "rank": 47
   },
   {
@@ -723,6 +770,7 @@
    "context": null,
    "effort": null,
    "name_full": "MiMo-V2.6-Flash",
+   "variants": 1,
    "rank": 48
   },
   {
@@ -738,6 +786,7 @@
    "context": null,
    "effort": null,
    "name_full": "Mistral Large 4",
+   "variants": 1,
    "rank": 49
   },
   {
@@ -753,6 +802,7 @@
    "context": null,
    "effort": null,
    "name_full": "Muse Spark Open",
+   "variants": 1,
    "rank": 50
   },
   {
@@ -768,6 +818,7 @@
    "context": null,
    "effort": null,
    "name_full": "Agnes 2.5 Pro Theta",
+   "variants": 1,
    "rank": 51
   },
   {
@@ -783,6 +834,7 @@
    "context": null,
    "effort": null,
    "name_full": "Ling-3.2-air",
+   "variants": 1,
    "rank": 52
   },
   {
@@ -798,6 +850,7 @@
    "context": null,
    "effort": null,
    "name_full": "DeepSeek V4 Pro 0813",
+   "variants": 1,
    "rank": 53
   },
   {
@@ -813,6 +866,7 @@
    "context": null,
    "effort": null,
    "name_full": "Nanbeige4.3-33B",
+   "variants": 1,
    "rank": 54
   },
   {
@@ -828,6 +882,7 @@
    "context": null,
    "effort": null,
    "name_full": "Inkling 2 Mini",
+   "variants": 1,
    "rank": 55
   },
   {
@@ -843,6 +898,7 @@
    "context": null,
    "effort": null,
    "name_full": "Qwen3.8 27B",
+   "variants": 1,
    "rank": 56
   },
   {
@@ -858,6 +914,7 @@
    "context": null,
    "effort": null,
    "name_full": "JT-4.1 Flash 236B A21B",
+   "variants": 1,
    "rank": 57
   },
   {
@@ -873,6 +930,7 @@
    "context": null,
    "effort": null,
    "name_full": "MiniMax-M3",
+   "variants": 1,
    "rank": 58
   },
   {
@@ -888,6 +946,7 @@
    "context": null,
    "effort": null,
    "name_full": "K2 Horizon 375B A23B",
+   "variants": 1,
    "rank": 59
   },
   {
@@ -903,6 +962,7 @@
    "context": null,
    "effort": null,
    "name_full": "Beam 1.0",
+   "variants": 1,
    "rank": 60
   },
   {
@@ -918,6 +978,7 @@
    "context": null,
    "effort": null,
    "name_full": "Solar Pro 4",
+   "variants": 1,
    "rank": 61
   },
   {
@@ -933,6 +994,7 @@
    "context": null,
    "effort": null,
    "name_full": "K2 Horizon 32B",
+   "variants": 1,
    "rank": 62
   },
   {
@@ -948,6 +1010,7 @@
    "context": null,
    "effort": null,
    "name_full": "K2 Horizon MoVA 36B A4B",
+   "variants": 1,
    "rank": 63
   },
   {
@@ -963,6 +1026,7 @@
    "context": null,
    "effort": null,
    "name_full": "Apodex 1.1",
+   "variants": 1,
    "rank": 64
   },
   {
@@ -978,6 +1042,7 @@
    "context": null,
    "effort": null,
    "name_full": "Nemotron 3.5 Super VL",
+   "variants": 1,
    "rank": 65
   },
   {
@@ -993,6 +1058,7 @@
    "context": null,
    "effort": null,
    "name_full": "Inkling",
+   "variants": 1,
    "rank": 66
   },
   {
@@ -1008,6 +1074,7 @@
    "context": null,
    "effort": null,
    "name_full": "Nemotron 3 Ultra 550B A55B",
+   "variants": 1,
    "rank": 67
   },
   {
@@ -1023,6 +1090,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemini 3.5 Flash-Lite",
+   "variants": 1,
    "rank": 68
   },
   {
@@ -1038,6 +1106,7 @@
    "context": null,
    "effort": null,
    "name_full": "K2 Horizon 7B",
+   "variants": 1,
    "rank": 69
   },
   {
@@ -1053,6 +1122,7 @@
    "context": null,
    "effort": null,
    "name_full": "A.X-K2",
+   "variants": 1,
    "rank": 70
   },
   {
@@ -1068,6 +1138,7 @@
    "context": null,
    "effort": null,
    "name_full": "K2 Horizon 3.7B",
+   "variants": 1,
    "rank": 71
   },
   {
@@ -1083,6 +1154,7 @@
    "context": null,
    "effort": null,
    "name_full": "K-EXAONE 2.0",
+   "variants": 1,
    "rank": 72
   },
   {
@@ -1098,6 +1170,7 @@
    "context": null,
    "effort": null,
    "name_full": "Muse Glimmer",
+   "variants": 1,
    "rank": 73
   },
   {
@@ -1113,6 +1186,7 @@
    "context": null,
    "effort": null,
    "name_full": "Command A+",
+   "variants": 1,
    "rank": 74
   },
   {
@@ -1128,6 +1202,7 @@
    "context": null,
    "effort": null,
    "name_full": "LFM3-1.7B",
+   "variants": 1,
    "rank": 75
   },
   {
@@ -1143,6 +1218,7 @@
    "context": null,
    "effort": null,
    "name_full": "Granite 4.2 30B",
+   "variants": 1,
    "rank": 76
   },
   {
@@ -1158,6 +1234,7 @@
    "context": null,
    "effort": null,
    "name_full": "Nemotron 3.5 Lightning",
+   "variants": 1,
    "rank": 77
   },
   {
@@ -1173,6 +1250,7 @@
    "context": null,
    "effort": null,
    "name_full": "Granite 4.2 8B",
+   "variants": 1,
    "rank": 78
   },
   {
@@ -1188,6 +1266,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemma 4 E4B",
+   "variants": 1,
    "rank": 79
   },
   {
@@ -1203,6 +1282,7 @@
    "context": null,
    "effort": null,
    "name_full": "Granite 4.2 3B",
+   "variants": 1,
    "rank": 80
   },
   {
@@ -1218,6 +1298,7 @@
    "context": null,
    "effort": null,
    "name_full": "Mistral Medium 3.5",
+   "variants": 1,
    "rank": 81
   },
   {
@@ -1233,6 +1314,7 @@
    "context": null,
    "effort": null,
    "name_full": "Gemma 4 31B",
+   "variants": 1,
    "rank": 82
   },
   {
@@ -1248,6 +1330,7 @@
    "context": null,
    "effort": null,
    "name_full": "Mistral Small 4",
+   "variants": 1,
    "rank": 83
   },
   {
@@ -1263,6 +1346,7 @@
    "context": null,
    "effort": null,
    "name_full": "gpt-oss-120b",
+   "variants": 1,
    "rank": 84
   },
   {
@@ -1278,6 +1362,7 @@
    "context": null,
    "effort": null,
    "name_full": "North Mini Code",
+   "variants": 1,
    "rank": 85
   },
   {
@@ -1293,6 +1378,7 @@
    "context": null,
    "effort": null,
    "name_full": "K2 Horizon 0.9B",
+   "variants": 1,
    "rank": 86
   },
   {
@@ -1308,6 +1394,7 @@
    "context": null,
    "effort": null,
    "name_full": "NVIDIA Nemotron 3 Nano 4B",
+   "variants": 1,
    "rank": 87
   },
   {
@@ -1323,6 +1410,7 @@
    "context": null,
    "effort": null,
    "name_full": "LFM3-VL-2B",
+   "variants": 1,
    "rank": 88
   }
  ]

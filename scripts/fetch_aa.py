@@ -157,17 +157,18 @@ def normalize(obj):
     slug = pick(obj, "slug", "model_slug", "shortName", "name")
     if not slug or not isinstance(slug, str):
         return None
-    name = pick(obj, "name", "model_name", "short_name") or slug
+    name = pick(obj, "shortName", "name", "model_name", "short_name") or slug
     index = pick(obj, *INDEX_KEYS)
     if not isinstance(index, (int, float)):
         index = deep_get(obj, set(INDEX_KEYS))
     if not isinstance(index, (int, float)):
         return None
-    price_in = deep_get(obj, {"price_1m_input_tokens", "price_1m_input", "input_price_per_million"})
-    price_out = deep_get(obj, {"price_1m_output_tokens", "price_1m_output", "output_price_per_million",
-                               "price_1m_output_tokens_reasoning"})
-    speed = deep_get(obj, {"median_output_tokens_per_second", "output_tokens_per_second",
-                           "median_tokens_per_second"})
+    price_in = pick(obj, "price1mInputTokens", "price_1m_input_tokens", "price_1m_input")
+    price_out = pick(obj, "price1mOutputTokens", "price_1m_output_tokens", "price_1m_output")
+    speed = pick(obj, "outputSpeed", "median_output_tokens_per_second", "output_tokens_per_second")
+    effort = pick(obj, "effort")
+    if isinstance(effort, dict):
+        effort = effort.get("label") or effort.get("slug")
     return {
         "model": slug,
         "model_display": name,
@@ -178,6 +179,9 @@ def normalize(obj):
         "speed": round(float(speed), 1) if isinstance(speed, (int, float)) else None,
         "open_weights": obj.get("isOpenWeights") if "isOpenWeights" in obj else None,
         "release_date": pick(obj, "releaseDate", "release_date"),
+        "context": pick(obj, "contextWindowTokens"),
+        "effort": effort,
+        "name_full": pick(obj, "name"),
     }
 
 

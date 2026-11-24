@@ -2,14 +2,15 @@
   "meta": {
     "leaderboard": "image-edit",
     "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
-    "fetched_at": "2026-11-24T11:28:39.391192+00:00",
+    "fetched_at": "2026-11-24T11:37:19.768852+00:00",
     "last_updated": "2026-11-17",
     "model_count": 64
   },
   "models": [
     {
       "rank": 1,
-      "model": "GPT-Image-2.5 Sunburst",
+      "model": "gpt-image-2-5-sunburst",
+      "model_display": "GPT-Image-2.5 Sunburst",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1518.6233652795484,
@@ -18,7 +19,8 @@
     },
     {
       "rank": 2,
-      "model": "GPT-Image-2.5 Flare",
+      "model": "gpt-image-2-5-flare",
+      "model_display": "GPT-Image-2.5 Flare",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1483.615663343985,
@@ -27,7 +29,8 @@
     },
     {
       "rank": 3,
-      "model": "GPT-Image-2.6 Sunburst (Medium)",
+      "model": "gpt-image-2-6-sunburst-medium",
+      "model_display": "GPT-Image-2.6 Sunburst (Medium)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1480.710585744545,
@@ -36,7 +39,8 @@
     },
     {
       "rank": 4,
-      "model": "MAI-Image-2.7",
+      "model": "mai-image-2-7",
+      "model_display": "MAI-Image-2.7",
       "vendor": "microsoft-ai",
       "license": "proprietary",
       "score": 1475.4840107459195,
@@ -45,7 +49,8 @@
     },
     {
       "rank": 5,
-      "model": "GPT-Image-2 (Medium)",
+      "model": "gpt-image-2-medium",
+      "model_display": "GPT-Image-2 (Medium)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1461.5215232235455,
@@ -54,7 +59,8 @@
     },
     {
       "rank": 6,
-      "model": "GPT-Image-2.6 Flare (Medium)",
+      "model": "gpt-image-2-6-flare-medium",
+      "model_display": "GPT-Image-2.6 Flare (Medium)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1460.6949345559856,
@@ -63,7 +69,8 @@
     },
     {
       "rank": 7,
-      "model": "Grok Imagine Image 2.0",
+      "model": "grok-imagine-image-2-0",
+      "model_display": "Grok Imagine Image 2.0",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1437.3657179279428,
@@ -72,7 +79,8 @@
     },
     {
       "rank": 8,
-      "model": "MAI-Image-2.6",
+      "model": "mai-image-2-6",
+      "model_display": "MAI-Image-2.6",
       "vendor": "microsoft-ai",
       "license": "proprietary",
       "score": 1427.4354155739982,
@@ -81,7 +89,8 @@
     },
     {
       "rank": 9,
-      "model": "Gemini Nano Banana 2.1",
+      "model": "gemini-nano-banana-2-1",
+      "model_display": "Gemini Nano Banana 2.1",
       "vendor": "google",
       "license": "proprietary",
       "score": 1427.173066493851,
@@ -90,7 +99,8 @@
     },
     {
       "rank": 10,
-      "model": "Grok Imagine Image 2.0 (20260801)",
+      "model": "grok-imagine-image-2-0-20260801",
+      "model_display": "Grok Imagine Image 2.0 (20260801)",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1418.6106998089936,
@@ -99,7 +109,8 @@
     },
     {
       "rank": 11,
-      "model": "Krea 3 Ultra",
+      "model": "krea-3-ultra",
+      "model_display": "Krea 3 Ultra",
       "vendor": "krea",
       "license": "proprietary",
       "score": 1411.6904835518642,
@@ -108,7 +119,8 @@
     },
     {
       "rank": 12,
-      "model": "MAI-Image-2.5",
+      "model": "mai-image-2-5",
+      "model_display": "MAI-Image-2.5",
       "vendor": "microsoft-ai",
       "license": "proprietary",
       "score": 1400.3009257094982,
@@ -117,7 +129,8 @@
     },
     {
       "rank": 13,
-      "model": "Muse Image",
+      "model": "muse-image",
+      "model_display": "Muse Image",
       "vendor": "meta",
       "license": "proprietary",
       "score": 1399.9934770396303,
@@ -126,7 +139,8 @@
     },
     {
       "rank": 14,
-      "model": "Seedream 5.0 Pro",
+      "model": "seedream-5-0-pro",
+      "model_display": "Seedream 5.0 Pro",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1391.9489501087908,
@@ -135,7 +149,8 @@
     },
     {
       "rank": 15,
-      "model": "Grok Imagine Image (Quality, 20260519)",
+      "model": "grok-imagine-image-quality-20260519",
+      "model_display": "Grok Imagine Image (Quality, 20260519)",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1391.2187813358676,
@@ -144,7 +159,8 @@
     },
     {
       "rank": 16,
-      "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+      "model": "gemini-3-pro-image-nano-banana-pro-2k",
+      "model_display": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1390.7734983803769,
@@ -153,7 +169,8 @@
     },
     {
       "rank": 17,
-      "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+      "model": "chatgpt-image-latest-high-fidelity-20251216",
+      "model_display": "ChatGPT Image Latest (High Fidelity, 20251216)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1387.4765551591909,
@@ -162,7 +179,8 @@
     },
     {
       "rank": 18,
-      "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+      "model": "gemini-3-1-flash-image-nano-banana-2-web-search",
+      "model_display": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1386.8670122618041,
@@ -171,7 +189,8 @@
     },
     {
       "rank": 19,
-      "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
+      "model": "gemini-3-pro-image-preview-nano-banana-pro",
+      "model_display": "Gemini 3 Pro Image Preview (nano-banana-pro)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1384.812846618806,
@@ -180,7 +199,8 @@
     },
     {
       "rank": 20,
-      "model": "Reve 2.1",
+      "model": "reve-2-1",
+      "model_display": "Reve 2.1",
       "vendor": "reve",
       "license": "proprietary",
       "score": 1372.7770448823326,
@@ -189,7 +209,8 @@
     },
     {
       "rank": 21,
-      "model": "GPT-Image-1.5 (High Fidelity)",
+      "model": "gpt-image-1-5-high-fidelity",
+      "model_display": "GPT-Image-1.5 (High Fidelity)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1367.2581614312512,
@@ -198,7 +219,8 @@
     },
     {
       "rank": 22,
-      "model": "Qwen-Image-2.1",
+      "model": "qwen-image-2-1",
+      "model_display": "Qwen-Image-2.1",
       "vendor": "alibaba",
       "license": "open",
       "score": 1363.2486405127295,
@@ -207,7 +229,8 @@
     },
     {
       "rank": 23,
-      "model": "Reve 2.0",
+      "model": "reve-2-0",
+      "model_display": "Reve 2.0",
       "vendor": "reve",
       "license": "proprietary",
       "score": 1359.1404622638918,
@@ -216,7 +239,8 @@
     },
     {
       "rank": 24,
-      "model": "MiniMax H3-Image",
+      "model": "minimax-h3-image",
+      "model_display": "MiniMax H3-Image",
       "vendor": "minimax",
       "license": "open",
       "score": 1358.1838775695321,
@@ -225,7 +249,8 @@
     },
     {
       "rank": 25,
-      "model": "Ideogram 4.5",
+      "model": "ideogram-4-5",
+      "model_display": "Ideogram 4.5",
       "vendor": "ideogram",
       "license": "proprietary",
       "score": 1346.7885859029318,
@@ -234,7 +259,8 @@
     },
     {
       "rank": 26,
-      "model": "UNI-1.1 Max",
+      "model": "uni-1-1-max",
+      "model_display": "UNI-1.1 Max",
       "vendor": "luma-ai",
       "license": "proprietary",
       "score": 1332.9073153602883,
@@ -243,7 +269,8 @@
     },
     {
       "rank": 27,
-      "model": "Grok Imagine Image",
+      "model": "grok-imagine-image",
+      "model_display": "Grok Imagine Image",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1328.595396076944,
@@ -252,7 +279,8 @@
     },
     {
       "rank": 28,
-      "model": "UNI-1.1",
+      "model": "uni-1-1",
+      "model_display": "UNI-1.1",
       "vendor": "luma-ai",
       "license": "proprietary",
       "score": 1315.2753858480887,
@@ -261,7 +289,8 @@
     },
     {
       "rank": 29,
-      "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+      "model": "gemini-3-1-flash-lite-image-nano-banana-2-lite",
+      "model_display": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1312.7306653653623,
@@ -270,7 +299,8 @@
     },
     {
       "rank": 30,
-      "model": "Qwen-Image-2.0-Pro (2026-06-22)",
+      "model": "qwen-image-2-0-pro-2026-06-22",
+      "model_display": "Qwen-Image-2.0-Pro (2026-06-22)",
       "vendor": "alibaba",
       "license": "proprietary",
       "score": 1302.7867180116145,
@@ -279,7 +309,8 @@
     },
     {
       "rank": 31,
-      "model": "Seedream 4.5",
+      "model": "seedream-4-5",
+      "model_display": "Seedream 4.5",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1302.5200691317916,
@@ -288,7 +319,8 @@
     },
     {
       "rank": 32,
-      "model": "Wan 2.7 Image Pro",
+      "model": "wan-2-7-image-pro",
+      "model_display": "Wan 2.7 Image Pro",
       "vendor": "alibaba",
       "license": "proprietary",
       "score": 1302.136892969027,
@@ -297,7 +329,8 @@
     },
     {
       "rank": 33,
-      "model": "HunyuanImage 3.0 Instruct",
+      "model": "hunyuanimage-3-0-instruct",
+      "model_display": "HunyuanImage 3.0 Instruct",
       "vendor": "tencent",
       "license": "open",
       "score": 1301.3916552743328,
@@ -306,7 +339,8 @@
     },
     {
       "rank": 34,
-      "model": "Wan 2.7 Image",
+      "model": "wan-2-7-image",
+      "model_display": "Wan 2.7 Image",
       "vendor": "alibaba",
       "license": "proprietary",
       "score": 1300.7966126304523,
@@ -315,7 +349,8 @@
     },
     {
       "rank": 35,
-      "model": "Seedream 5.0 Lite",
+      "model": "seedream-5-0-lite",
+      "model_display": "Seedream 5.0 Lite",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1293.4042191565206,
@@ -324,7 +359,8 @@
     },
     {
       "rank": 36,
-      "model": "Gemini 2.5 Flash Image Preview (nano-banana)",
+      "model": "gemini-2-5-flash-image-preview-nano-banana",
+      "model_display": "Gemini 2.5 Flash Image Preview (nano-banana)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1291.5848040484182,
@@ -333,7 +369,8 @@
     },
     {
       "rank": 37,
-      "model": "Seedream 4.0 (2K)",
+      "model": "seedream-4-0-2k",
+      "model_display": "Seedream 4.0 (2K)",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1267.0421614243814,
@@ -342,7 +379,8 @@
     },
     {
       "rank": 38,
-      "model": "FLUX.2 [max]",
+      "model": "flux-2-max",
+      "model_display": "FLUX.2 [max]",
       "vendor": "bfl",
       "license": "proprietary",
       "score": 1261.6704579804216,
@@ -351,7 +389,8 @@
     },
     {
       "rank": 39,
-      "model": "Reve v1.1",
+      "model": "reve-v1-1",
+      "model_display": "Reve v1.1",
       "vendor": "reve",
       "license": "proprietary",
       "score": 1261.4854621932252,
@@ -360,7 +399,8 @@
     },
     {
       "rank": 40,
-      "model": "Kling Image O1",
+      "model": "kling-image-o1",
+      "model_display": "Kling Image O1",
       "vendor": "kling",
       "license": "proprietary",
       "score": 1250.445518270144,
@@ -369,7 +409,8 @@
     },
     {
       "rank": 41,
-      "model": "FLUX.2 [pro]",
+      "model": "flux-2-pro",
+      "model_display": "FLUX.2 [pro]",
       "vendor": "bfl",
       "license": "proprietary",
       "score": 1247.5374921417147,
@@ -378,7 +419,8 @@
     },
     {
       "rank": 42,
-      "model": "Qwen-Image-Edit",
+      "model": "qwen-image-edit",
+      "model_display": "Qwen-Image-Edit",
       "vendor": "alibaba",
       "license": "open",
       "score": 1240.8749682325022,
@@ -387,7 +429,8 @@
     },
     {
       "rank": 43,
-      "model": "Reve v1",
+      "model": "reve-v1",
+      "model_display": "Reve v1",
       "vendor": "reve",
       "license": "proprietary",
       "score": 1234.5930578187613,
@@ -396,7 +439,8 @@
     },
     {
       "rank": 44,
-      "model": "Qwen-Image-Edit (2511)",
+      "model": "qwen-image-edit-2511",
+      "model_display": "Qwen-Image-Edit (2511)",
       "vendor": "alibaba",
       "license": "open",
       "score": 1233.061580328503,
@@ -405,7 +449,8 @@
     },
     {
       "rank": 45,
-      "model": "Wan 2.6 Image",
+      "model": "wan-2-6-image",
+      "model_display": "Wan 2.6 Image",
       "vendor": "alibaba",
       "license": "proprietary",
       "score": 1231.1704478553356,
@@ -414,7 +459,8 @@
     },
     {
       "rank": 46,
-      "model": "FLUX.2 [flex]",
+      "model": "flux-2-flex",
+      "model_display": "FLUX.2 [flex]",
       "vendor": "bfl",
       "license": "proprietary",
       "score": 1224.4187304516383,
@@ -423,7 +469,8 @@
     },
     {
       "rank": 47,
-      "model": "FLUX.2 [klein] 9B",
+      "model": "flux-2-klein-9b",
+      "model_display": "FLUX.2 [klein] 9B",
       "vendor": "bfl",
       "license": "open",
       "score": 1224.4043399324887,
@@ -432,7 +479,8 @@
     },
     {
       "rank": 48,
-      "model": "FLUX.2 [dev]",
+      "model": "flux-2-dev",
+      "model_display": "FLUX.2 [dev]",
       "vendor": "bfl",
       "license": "open",
       "score": 1223.9336179732522,
@@ -441,7 +489,8 @@
     },
     {
       "rank": 49,
-      "model": "Seedream 4.0 (High Res, fal)",
+      "model": "seedream-4-0-high-res-fal",
+      "model_display": "Seedream 4.0 (High Res, fal)",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1215.72766496063,
@@ -450,7 +499,8 @@
     },
     {
       "rank": 50,
-      "model": "P-Image-Edit",
+      "model": "p-image-edit",
+      "model_display": "P-Image-Edit",
       "vendor": "",
       "license": "proprietary",
       "score": 1209.651672674309,
@@ -459,7 +509,8 @@
     },
     {
       "rank": 51,
-      "model": "Seedream 4.0 (fal)",
+      "model": "seedream-4-0-fal",
+      "model_display": "Seedream 4.0 (fal)",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1209.4145412627954,
@@ -468,7 +519,8 @@
     },
     {
       "rank": 52,
-      "model": "Reve v1.1 Fast",
+      "model": "reve-v1-1-fast",
+      "model_display": "Reve v1.1 Fast",
       "vendor": "reve",
       "license": "proprietary",
       "score": 1206.6629600865674,
@@ -477,7 +529,8 @@
     },
     {
       "rank": 53,
-      "model": "Reve Edit Fast",
+      "model": "reve-edit-fast",
+      "model_display": "Reve Edit Fast",
       "vendor": "reve",
       "license": "proprietary",
       "score": 1198.0043363300847,
@@ -486,7 +539,8 @@
     },
     {
       "rank": 54,
-      "model": "FLUX.2 [klein] 4B",
+      "model": "flux-2-klein-4b",
+      "model_display": "FLUX.2 [klein] 4B",
       "vendor": "bfl",
       "license": "open",
       "score": 1187.1200412138883,
@@ -495,7 +549,8 @@
     },
     {
       "rank": 55,
-      "model": "FLUX.1 Kontext [max]",
+      "model": "flux-1-kontext-max",
+      "model_display": "FLUX.1 Kontext [max]",
       "vendor": "bfl",
       "license": "proprietary",
       "score": 1182.106767019324,
@@ -504,7 +559,8 @@
     },
     {
       "rank": 56,
-      "model": "Wan 2.5 Preview",
+      "model": "wan-2-5-preview",
+      "model_display": "Wan 2.5 Preview",
       "vendor": "alibaba",
       "license": "proprietary",
       "score": 1179.7386233229581,
@@ -513,7 +569,8 @@
     },
     {
       "rank": 57,
-      "model": "FLUX.1 Kontext [pro]",
+      "model": "flux-1-kontext-pro",
+      "model_display": "FLUX.1 Kontext [pro]",
       "vendor": "bfl",
       "license": "proprietary",
       "score": 1177.3059292502662,
@@ -522,7 +579,8 @@
     },
     {
       "rank": 58,
-      "model": "FLUX.1 Kontext [dev]",
+      "model": "flux-1-kontext-dev",
+      "model_display": "FLUX.1 Kontext [dev]",
       "vendor": "bfl",
       "license": "open",
       "score": 1150.21809561986,
@@ -531,7 +589,8 @@
     },
     {
       "rank": 59,
-      "model": "SeedEdit 3.0",
+      "model": "seededit-3-0",
+      "model_display": "SeedEdit 3.0",
       "vendor": "bytedance",
       "license": "proprietary",
       "score": 1139.0939950529053,
@@ -540,7 +599,8 @@
     },
     {
       "rank": 60,
-      "model": "GPT-Image-1",
+      "model": "gpt-image-1",
+      "model_display": "GPT-Image-1",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1138.7502843732873,
@@ -549,7 +609,8 @@
     },
     {
       "rank": 61,
-      "model": "GPT-Image-1 mini",
+      "model": "gpt-image-1-mini",
+      "model_display": "GPT-Image-1 mini",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1124.018167457873,
@@ -558,7 +619,8 @@
     },
     {
       "rank": 62,
-      "model": "Gemini 2.0 Flash Preview Image Generation",
+      "model": "gemini-2-0-flash-preview-image-generation",
+      "model_display": "Gemini 2.0 Flash Preview Image Generation",
       "vendor": "google",
       "license": "proprietary",
       "score": 1081.8898543636556,
@@ -567,7 +629,8 @@
     },
     {
       "rank": 63,
-      "model": "BAGEL",
+      "model": "bagel",
+      "model_display": "BAGEL",
       "vendor": "bytedance",
       "license": "open",
       "score": 1026.6369922151282,
@@ -576,7 +639,8 @@
     },
     {
       "rank": 64,
-      "model": "Step1X-Edit",
+      "model": "step1x-edit",
+      "model_display": "Step1X-Edit",
       "vendor": "stepfun",
       "license": "open",
       "score": 996.137005778477,

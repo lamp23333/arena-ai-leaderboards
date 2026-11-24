@@ -2,7 +2,7 @@
   "meta": {
     "leaderboard": "search-style-control",
     "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
-    "fetched_at": "2026-11-24T11:28:39.391192+00:00",
+    "fetched_at": "2026-11-24T11:37:19.768852+00:00",
     "last_updated": "2026-11-19",
     "rows": 45,
     "categories": [
@@ -24,7 +24,8 @@
   "models": [
     {
       "rank": 1,
-      "model": "GPT-5.6 Sol (xHigh)",
+      "model": "gpt-5-6-sol-xhigh",
+      "model_display": "GPT-5.6 Sol (xHigh)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1253.6427825217847,
@@ -34,7 +35,8 @@
     },
     {
       "rank": 2,
-      "model": "GPT-6.1 Sol (Max)",
+      "model": "gpt-6-1-sol-max",
+      "model_display": "GPT-6.1 Sol (Max)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1248.881808775761,
@@ -44,7 +46,8 @@
     },
     {
       "rank": 3,
-      "model": "GPT-6.2 Astra (Max)",
+      "model": "gpt-6-2-astra-max",
+      "model_display": "GPT-6.2 Astra (Max)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1248.8415746576432,
@@ -54,7 +57,8 @@
     },
     {
       "rank": 4,
-      "model": "GPT-6 Astra (Max)",
+      "model": "gpt-6-astra-max",
+      "model_display": "GPT-6 Astra (Max)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1244.5501948768765,
@@ -64,7 +68,8 @@
     },
     {
       "rank": 5,
-      "model": "GPT-6 Sol (Max)",
+      "model": "gpt-6-sol-max",
+      "model_display": "GPT-6 Sol (Max)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1228.589506106357,
@@ -74,7 +79,8 @@
     },
     {
       "rank": 6,
-      "model": "Claude Fable 5 (High)",
+      "model": "claude-fable-5-high",
+      "model_display": "Claude Fable 5 (High)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1228.3363017787126,
@@ -84,7 +90,8 @@
     },
     {
       "rank": 7,
-      "model": "GPT-6.2 Sol (Max)",
+      "model": "gpt-6-2-sol-max",
+      "model_display": "GPT-6.2 Sol (Max)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1227.64556279975,
@@ -94,7 +101,8 @@
     },
     {
       "rank": 8,
-      "model": "Claude Fable 5.1 (High)",
+      "model": "claude-fable-5-1-high",
+      "model_display": "Claude Fable 5.1 (High)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1227.109248467809,
@@ -104,7 +112,8 @@
     },
     {
       "rank": 9,
-      "model": "GPT-5.5 (Search)",
+      "model": "gpt-5-5-search",
+      "model_display": "GPT-5.5 (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1226.6092282127659,
@@ -114,7 +123,8 @@
     },
     {
       "rank": 10,
-      "model": "Qwen3.8-Max",
+      "model": "qwen3-8-max",
+      "model_display": "Qwen3.8-Max",
       "vendor": "alibaba",
       "license": "proprietary",
       "score": 1226.1831501186527,
@@ -124,7 +134,8 @@
     },
     {
       "rank": 11,
-      "model": "Claude Opus 4.6 (Search)",
+      "model": "claude-opus-4-6-search",
+      "model_display": "Claude Opus 4.6 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1221.770786834521,
@@ -134,7 +145,8 @@
     },
     {
       "rank": 12,
-      "model": "Claude Opus 5.5 (Medium)",
+      "model": "claude-opus-5-5-medium",
+      "model_display": "Claude Opus 5.5 (Medium)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1212.8821740803112,
@@ -144,7 +156,8 @@
     },
     {
       "rank": 13,
-      "model": "Claude Opus 5 (High)",
+      "model": "claude-opus-5-high",
+      "model_display": "Claude Opus 5 (High)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1212.7667589773212,
@@ -154,7 +167,8 @@
     },
     {
       "rank": 14,
-      "model": "Claude Opus 4.7",
+      "model": "claude-opus-4-7",
+      "model_display": "Claude Opus 4.7",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1209.7702411639127,
@@ -164,7 +178,8 @@
     },
     {
       "rank": 15,
-      "model": "Gemini 3.1 Pro (Grounding)",
+      "model": "gemini-3-1-pro-grounding",
+      "model_display": "Gemini 3.1 Pro (Grounding)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1209.452770202335,
@@ -174,7 +189,8 @@
     },
     {
       "rank": 16,
-      "model": "GPT-6 Luna (Max)",
+      "model": "gpt-6-luna-max",
+      "model_display": "GPT-6 Luna (Max)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1208.4377482851007,
@@ -184,7 +200,8 @@
     },
     {
       "rank": 17,
-      "model": "Grok 4.20 Multi-Agent Beta (0309)",
+      "model": "grok-4-20-multi-agent-beta-0309",
+      "model_display": "Grok 4.20 Multi-Agent Beta (0309)",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1207.024838433017,
@@ -194,7 +211,8 @@
     },
     {
       "rank": 18,
-      "model": "Grok 4.5",
+      "model": "grok-4-5",
+      "model_display": "Grok 4.5",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1205.5796374895335,
@@ -204,7 +222,8 @@
     },
     {
       "rank": 19,
-      "model": "Gemini 3 Pro (Grounding)",
+      "model": "gemini-3-pro-grounding",
+      "model_display": "Gemini 3 Pro (Grounding)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1200.9702712729786,
@@ -214,7 +233,8 @@
     },
     {
       "rank": 20,
-      "model": "Claude Sonnet 4.6 (Search)",
+      "model": "claude-sonnet-4-6-search",
+      "model_display": "Claude Sonnet 4.6 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1200.9638226050079,
@@ -224,7 +244,8 @@
     },
     {
       "rank": 21,
-      "model": "Grok 4.20 Beta 1",
+      "model": "grok-4-20-beta-1",
+      "model_display": "Grok 4.20 Beta 1",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1199.7304179783653,
@@ -234,7 +255,8 @@
     },
     {
       "rank": 22,
-      "model": "o3 (Search)",
+      "model": "o3-search",
+      "model_display": "o3 (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1197.967221029604,
@@ -244,7 +266,8 @@
     },
     {
       "rank": 23,
-      "model": "Grok 4.1 Fast (Search)",
+      "model": "grok-4-1-fast-search",
+      "model_display": "Grok 4.1 Fast (Search)",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1196.1329577476558,
@@ -254,7 +277,8 @@
     },
     {
       "rank": 24,
-      "model": "GPT-5.4 (Search)",
+      "model": "gpt-5-4-search",
+      "model_display": "GPT-5.4 (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1195.344621530859,
@@ -264,7 +288,8 @@
     },
     {
       "rank": 25,
-      "model": "Claude Opus 4.8",
+      "model": "claude-opus-4-8",
+      "model_display": "Claude Opus 4.8",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1194.0067596218657,
@@ -274,7 +299,8 @@
     },
     {
       "rank": 26,
-      "model": "Grok 4.3",
+      "model": "grok-4-3",
+      "model_display": "Grok 4.3",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1193.6011022205714,
@@ -284,7 +310,8 @@
     },
     {
       "rank": 27,
-      "model": "ERNIE 5.1",
+      "model": "ernie-5-1",
+      "model_display": "ERNIE 5.1",
       "vendor": "baidu",
       "license": "proprietary",
       "score": 1192.1243158235754,
@@ -294,7 +321,8 @@
     },
     {
       "rank": 28,
-      "model": "Claude Sonnet 5 (Search)",
+      "model": "claude-sonnet-5-search",
+      "model_display": "Claude Sonnet 5 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1190.4513668686434,
@@ -304,7 +332,8 @@
     },
     {
       "rank": 29,
-      "model": "GPT-5 (Search)",
+      "model": "gpt-5-search",
+      "model_display": "GPT-5 (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1189.6122421332539,
@@ -314,7 +343,8 @@
     },
     {
       "rank": 30,
-      "model": "Gemini 3 Flash (Grounding)",
+      "model": "gemini-3-flash-grounding",
+      "model_display": "Gemini 3 Flash (Grounding)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1187.9587760824556,
@@ -324,7 +354,8 @@
     },
     {
       "rank": 31,
-      "model": "Claude Opus 4.5 (Search)",
+      "model": "claude-opus-4-5-search",
+      "model_display": "Claude Opus 4.5 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1186.3314722467178,
@@ -334,7 +365,8 @@
     },
     {
       "rank": 32,
-      "model": "GPT-5.1 (Search)",
+      "model": "gpt-5-1-search",
+      "model_display": "GPT-5.1 (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1183.7256968682434,
@@ -344,7 +376,8 @@
     },
     {
       "rank": 33,
-      "model": "Amazon-Web-Search-Agent",
+      "model": "amazon-web-search-agent",
+      "model_display": "Amazon-Web-Search-Agent",
       "vendor": "amazon",
       "license": "proprietary",
       "score": 1177.6453655913754,
@@ -354,7 +387,8 @@
     },
     {
       "rank": 34,
-      "model": "Claude Sonnet 4.5 (Search)",
+      "model": "claude-sonnet-4-5-search",
+      "model_display": "Claude Sonnet 4.5 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1174.3461772041296,
@@ -364,7 +398,8 @@
     },
     {
       "rank": 35,
-      "model": "Claude Opus 4.1 (Search)",
+      "model": "claude-opus-4-1-search",
+      "model_display": "Claude Opus 4.1 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1166.8917401649808,
@@ -374,7 +409,8 @@
     },
     {
       "rank": 36,
-      "model": "Grok 4 Fast (Search)",
+      "model": "grok-4-fast-search",
+      "model_display": "Grok 4 Fast (Search)",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1162.4166019081783,
@@ -384,7 +420,8 @@
     },
     {
       "rank": 37,
-      "model": "GPT-5.2 (Search)",
+      "model": "gpt-5-2-search",
+      "model_display": "GPT-5.2 (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1160.6570750059257,
@@ -394,7 +431,8 @@
     },
     {
       "rank": 38,
-      "model": "Claude Opus 4 (Search)",
+      "model": "claude-opus-4-search",
+      "model_display": "Claude Opus 4 (Search)",
       "vendor": "anthropic",
       "license": "proprietary",
       "score": 1151.5294143358356,
@@ -404,7 +442,8 @@
     },
     {
       "rank": 39,
-      "model": "Gemini 2.5 Pro (Grounding)",
+      "model": "gemini-2-5-pro-grounding",
+      "model_display": "Gemini 2.5 Pro (Grounding)",
       "vendor": "google",
       "license": "proprietary",
       "score": 1145.0155124488447,
@@ -414,7 +453,8 @@
     },
     {
       "rank": 40,
-      "model": "Sonar Pro (High)",
+      "model": "sonar-pro-high",
+      "model_display": "Sonar Pro (High)",
       "vendor": "perplexity",
       "license": "proprietary",
       "score": 1142.291758519279,
@@ -424,7 +464,8 @@
     },
     {
       "rank": 41,
-      "model": "Sonar Reasoning Pro (High)",
+      "model": "sonar-reasoning-pro-high",
+      "model_display": "Sonar Reasoning Pro (High)",
       "vendor": "perplexity",
       "license": "proprietary",
       "score": 1138.2356875898877,
@@ -434,7 +475,8 @@
     },
     {
       "rank": 42,
-      "model": "GPT-5.2 (Search, Non-Reasoning)",
+      "model": "gpt-5-2-search-non-reasoning",
+      "model_display": "GPT-5.2 (Search, Non-Reasoning)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1135.8735604038304,
@@ -444,7 +486,8 @@
     },
     {
       "rank": 43,
-      "model": "Grok 4 (Search)",
+      "model": "grok-4-search",
+      "model_display": "Grok 4 (Search)",
       "vendor": "xai",
       "license": "proprietary",
       "score": 1123.0443152955888,
@@ -454,7 +497,8 @@
     },
     {
       "rank": 44,
-      "model": "GPT-4o (Search)",
+      "model": "gpt-4o-search",
+      "model_display": "GPT-4o (Search)",
       "vendor": "openai",
       "license": "proprietary",
       "score": 1083.7909240509134,
@@ -464,7 +508,8 @@
     },
     {
       "rank": 45,
-      "model": "Diffbot-Small-XL",
+      "model": "diffbot-small-xl",
+      "model_display": "Diffbot-Small-XL",
       "vendor": "diffbot",
       "license": "open",
       "score": 1061.911387701257,

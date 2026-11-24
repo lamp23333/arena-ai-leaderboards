@@ -26,7 +26,10 @@ import urllib.error
 import urllib.request
 
 API_URL = "https://artificialanalysis.ai/api/v2/language/models"
-PAGE_URL = "https://artificialanalysis.ai/models/comparisons"
+# The real leaderboard page: it ships the whole language-model catalogue
+# inside the "initialModels" prop of the Next.js flight payload.
+PAGE_URL = "https://artificialanalysis.ai/leaderboards/models"
+FALLBACK_PAGE_URL = "https://artificialanalysis.ai/models/comparisons"
 DOC_URL = "https://artificialanalysis.ai/data-api"
 OUT_DIR = "data-aa"
 UA = {
@@ -296,16 +299,61 @@ def merge_variants(items):
     return list(merged.values())
 
 
-def collect_from_page():
-    status, body = fetch(PAGE_URL)
+def prop_array(blob, prop):
+    """Decode the JSON array stored under "prop" in the flight payload."""
+    needle = '"' + prop + '":'
+    pos = blob.find(needle)
+    decoder = json.JSONDecoder()
+    while pos >= 0:
+        start = blob.find("[", pos)
+        if start >= 0:
+            try:
+                arr, _end = decoder.raw_decode(blob, start)
+            except Exception:
+                arr = None
+            if isinstance(arr, list) and any(
+                isinstance(x, dict) and any(k in x for k in INDEX_KEYS) for x in arr
+            ):
+                return arr
+        pos = blob.find(needle, pos + len(needle))
+    return None
+
+
+def page_models(url):
+    status, body = fetch(url)
     if status != 200:
-        raise RuntimeError("page http " + str(status))
+        return [], 0, "http " + str(status)
     blob = rsc_blob(body.decode("utf-8", "replace"))
     if not blob:
-        raise RuntimeError("empty rsc payload")
-    seen = {}
-    harvest(blob, json.JSONDecoder(), seen)
-    return list(seen.values()), len(blob)
+        return [], 0, "empty rsc payload"
+
+    items = []
+    arr = prop_array(blob, "initialModels")
+    if arr:
+        bucket = []
+        collect_model_dicts(arr, bucket)
+        for one in bucket:
+            item = normalize(one)
+            if item:
+                items.append(item)
+
+    if len(items) < 10:
+        seen = {}
+        harvest(blob, json.JSONDecoder(), seen)
+        items = list(seen.values())
+
+    return items, len(blob), ""
+
+
+def collect_from_page():
+    items, size, err = page_models(PAGE_URL)
+    if len(items) >= 10:
+        return items, size
+    print("primary page gave", len(items), "models", err)
+    items2, size2, err2 = page_models(FALLBACK_PAGE_URL)
+    if items2:
+        return items2, size2
+    raise RuntimeError("no models from either page: " + err + " / " + err2)
 
 
 def collect_from_api(key):

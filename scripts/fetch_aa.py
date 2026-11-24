@@ -74,6 +74,8 @@ VENDOR_RULES = [
     ("yuanshi", "shengshu"),
 ]
 
+INDEX_KEYS = ("intelligenceIndex", "intelligence_index")
+
 
 def fetch(url, extra=None, timeout=60):
     headers = dict(UA)
@@ -98,24 +100,6 @@ def rsc_blob(html):
     return "".join(parts)
 
 
-def iter_objects(blob):
-    decoder = json.JSONDecoder()
-    pos = 0
-    size = len(blob)
-    while pos < size:
-        start = blob.find("{", pos)
-        if start < 0:
-            return
-        try:
-            obj, end = decoder.raw_decode(blob, start)
-        except Exception:
-            pos = start + 1
-            continue
-        if isinstance(obj, dict):
-            yield obj
-        pos = end
-
-
 def deep_get(obj, names):
     if isinstance(obj, dict):
         for key, value in obj.items():
@@ -133,6 +117,21 @@ def deep_get(obj, names):
     return None
 
 
+def collect_model_dicts(obj, out, depth=0):
+    """Recursively collect every dict that carries an intelligence index."""
+    if depth > 12:
+        return
+    if isinstance(obj, dict):
+        if any(key in obj for key in INDEX_KEYS):
+            out.append(obj)
+            return
+        for value in obj.values():
+            collect_model_dicts(value, out, depth + 1)
+    elif isinstance(obj, list):
+        for value in obj:
+            collect_model_dicts(value, out, depth + 1)
+
+
 def pick(obj, *names):
     for name in names:
         value = obj.get(name)
@@ -147,8 +146,7 @@ def vendor_of(slug, name, obj):
         explicit = explicit.get("name") or explicit.get("slug")
     if isinstance(explicit, str) and explicit.strip():
         return explicit.strip().lower()
-    text = (slug or "") + " " + (name or "")
-    lowered = text.lower()
+    lowered = ((slug or "") + " " + (name or "")).lower()
     for prefix, vendor in VENDOR_RULES:
         if lowered.startswith(prefix) or (" " + prefix) in lowered:
             return vendor
@@ -160,14 +158,16 @@ def normalize(obj):
     if not slug or not isinstance(slug, str):
         return None
     name = pick(obj, "name", "model_name", "short_name") or slug
-    index = pick(obj, "intelligenceIndex", "intelligence_index", "intelligence_index_value")
+    index = pick(obj, *INDEX_KEYS)
     if not isinstance(index, (int, float)):
-        index = deep_get(obj, {"intelligenceIndex", "intelligence_index"})
+        index = deep_get(obj, set(INDEX_KEYS))
     if not isinstance(index, (int, float)):
         return None
     price_in = deep_get(obj, {"price_1m_input_tokens", "price_1m_input", "input_price_per_million"})
-    price_out = deep_get(obj, {"price_1m_output_tokens", "price_1m_output", "output_price_per_million", "price_1m_output_tokens_reasoning"})
-    speed = deep_get(obj, {"median_output_tokens_per_second", "output_tokens_per_second", "median_tokens_per_second"})
+    price_out = deep_get(obj, {"price_1m_output_tokens", "price_1m_output", "output_price_per_million",
+                               "price_1m_output_tokens_reasoning"})
+    speed = deep_get(obj, {"median_output_tokens_per_second", "output_tokens_per_second",
+                           "median_tokens_per_second"})
     return {
         "model": slug,
         "model_display": name,
@@ -176,7 +176,7 @@ def normalize(obj):
         "price_in": round(float(price_in), 3) if isinstance(price_in, (int, float)) else None,
         "price_out": round(float(price_out), 3) if isinstance(price_out, (int, float)) else None,
         "speed": round(float(speed), 1) if isinstance(speed, (int, float)) else None,
-        "open_weights": bool(obj.get("isOpenWeights")) if "isOpenWeights" in obj else None,
+        "open_weights": obj.get("isOpenWeights") if "isOpenWeights" in obj else None,
         "release_date": pick(obj, "releaseDate", "release_date"),
     }
 
@@ -186,14 +186,28 @@ def collect_from_page():
     if status != 200:
         raise RuntimeError("page http " + str(status))
     blob = rsc_blob(body.decode("utf-8", "replace"))
+    if not blob:
+        raise RuntimeError("empty rsc payload")
+    decoder = json.JSONDecoder()
     seen = {}
-    for obj in iter_objects(blob):
-        if not any(k in obj for k in ("intelligenceIndex", "intelligence_index")):
-            continue
-        item = normalize(obj)
-        if not item:
-            continue
-        seen[item["model"]] = item
+    hits = [m.start() for m in re.finditer(r'"intelligence[_A-Za-z]*"\s*:', blob)]
+    for pos in hits:
+        if len(seen) > 5:
+            break
+        start = blob.rfind("{", max(0, pos - 4000), pos)
+        while start >= 0:
+            try:
+                obj, _end = decoder.raw_decode(blob, start)
+            except Exception:
+                start = blob.rfind("{", max(0, pos - 4000), start)
+                continue
+            bucket = []
+            collect_model_dicts(obj, bucket)
+            for one in bucket:
+                item = normalize(one)
+                if item:
+                    seen[item["model"]] = item
+            break
     return list(seen.values()), len(blob)
 
 
@@ -205,14 +219,15 @@ def collect_from_api(key):
     payload = json.loads(text)
     rows = payload.get("data") if isinstance(payload, dict) else payload
     if not isinstance(rows, list):
-        raise RuntimeError("unexpected api payload")
+        raise RuntimeError("unexpected api payload keys: " + str(list(payload)[:8]))
+    if rows:
+        print("api sample keys:", list(rows[0])[:20])
     out = {}
     for obj in rows:
-        if not isinstance(obj, dict):
-            continue
-        item = normalize(obj)
-        if item:
-            out[item["model"]] = item
+        if isinstance(obj, dict):
+            item = normalize(obj)
+            if item:
+                out[item["model"]] = item
     return list(out.values()), len(text)
 
 

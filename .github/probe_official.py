@@ -9,7 +9,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
       "Accept-Language": "en-US,en;q=0.9"}
 
 
-def fetch(u, extra=None, t=40):
+def fetch(u, extra=None, t=45):
     h = dict(UA)
     if extra:
         h.update(extra)
@@ -23,32 +23,40 @@ def fetch(u, extra=None, t=40):
         return "ERR", str(e).encode()
 
 
-print("### AA endpoints ###")
-for u, extra in [
-    ("https://artificialanalysis.ai/api/v2/data/llms/models", None),
-    ("https://artificialanalysis.ai/api/v2/data/llms/models", {"x-api-key": "demo"}),
-    ("https://artificialanalysis.ai/api/v2/data/llms/creators", None),
-]:
-    st, body = fetch(u, extra)
-    tag = "NOAUTH" if not extra else ("APIKEY=" + extra.get("x-api-key", ""))
-    print("  AA", tag, st, len(body), u.split("ai/", 1)[-1])
-    print("     head:", body[:200].decode("utf-8", "replace").replace("\n", " "))
+print("### migrate doc ###")
+for u in ["https://artificialanalysis.ai/data-api/migrate-v2-data", "https://artificialanalysis.ai/data-api"]:
+    st, body = fetch(u)
+    txt = body.decode("utf-8", "replace") if isinstance(body, bytes) else str(body)
+    print("  DOC", st, len(txt), u)
+    plain = re.sub(r"<script[^>]*>.*?</script>", " ", txt, flags=re.S)
+    plain = re.sub(r"<[^>]+>", " ", plain)
+    plain = re.sub(r"\s+", " ", plain)
+    for kw in ["api", "key", "token", "endpoint", "Authorization", "x-api"]:
+        for mm in re.finditer(kw, plain, re.I):
+            seg = plain[max(0, mm.start() - 90):mm.start() + 130]
+            print("    CTX", kw, "|", seg.strip()[:220])
+            break
 
-print("### AA homepage scan ###")
+print("### candidate endpoints ###")
+for u in ["https://artificialanalysis.ai/api/v2/llms/models",
+          "https://artificialanalysis.ai/api/data/llms/models",
+          "https://artificialanalysis.ai/data-api/llms/models",
+          "https://artificialanalysis.ai/api/v2/data/llms/models/latest"]:
+    st, body = fetch(u)
+    print("  CAND", st, len(body), u.split("ai/", 1)[-1], str(body[:110]))
+
+print("### homepage embedded data ###")
 st, body = fetch("https://artificialanalysis.ai/")
-print("  page", st, len(body))
 txt = body.decode("utf-8", "replace")
-for probe in ["__next_f", "intelligenceIndex", "intelligence_index", "x-api-key", "api/v2", "median_output_tokens", "self.__next_f"]:
-    print("  COUNT", probe, txt.count(probe))
-paths = sorted(set(re.findall(r'"(/api/[a-zA-Z0-9_\-/]*)"', txt)))[:20]
-print("  api paths:", paths)
-print("### arena sitemap locs ###")
-st, body = fetch("https://arena.ai/sitemap.xml")
-print("  sitemap", st, len(body))
-locs = re.findall(r"<loc>([^<]+)</loc>", body.decode("utf-8", "replace"))
-print("  LOCS", len(locs))
-for l in locs:
-    print("   S", l.replace("https://arena.ai", ""))
+print("  page", st, len(txt))
+idxs = [m.start() for m in re.finditer("intelligenceIndex", txt)]
+print("  hits", len(idxs))
+for i in idxs[:3]:
+    print("  SNIP", txt[max(0, i - 160):i + 200].replace("\\\"", "\"")[:360])
+names = re.findall(r'\\?"name\\?":\\?"([A-Z][^"\\]{1,40})\\?"', txt)
+print("  NAME_CANDIDATES", len(names), names[:12])
+slug = re.findall(r'/models/([a-z0-9\-]{3,40})', txt)
+print("  MODEL_SLUGS", len(set(slug)), sorted(set(slug))[:15])
 
 sys.stdout.flush()
 os._exit(0)

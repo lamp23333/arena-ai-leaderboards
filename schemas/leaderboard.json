@@ -3,19 +3,44 @@
   "title": "Arena Leaderboard",
   "description": "A single leaderboard snapshot from arena.ai",
   "type": "object",
-  "required": ["meta", "models"],
+  "required": [
+    "meta",
+    "models"
+  ],
   "additionalProperties": false,
   "properties": {
     "meta": {
       "type": "object",
-      "required": ["leaderboard", "source_url", "fetched_at", "model_count"],
+      "required": [
+        "leaderboard",
+        "source_url",
+        "fetched_at",
+        "model_count"
+      ],
       "additionalProperties": false,
       "properties": {
-        "leaderboard": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-        "source_url": { "type": "string", "format": "uri" },
-        "fetched_at": { "type": "string", "format": "date-time" },
-        "last_updated": { "type": ["string", "null"] },
-        "model_count": { "type": "integer", "minimum": 1 }
+        "leaderboard": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "fetched_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_updated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model_count": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
     "models": {
@@ -29,16 +54,62 @@
   "$defs": {
     "model": {
       "type": "object",
-      "required": ["rank", "model", "vendor", "license", "score", "ci", "votes"],
+      "required": [
+        "rank",
+        "model",
+        "vendor",
+        "license",
+        "score",
+        "ci",
+        "votes"
+      ],
       "additionalProperties": false,
       "properties": {
-        "rank": { "type": "integer", "minimum": 1 },
-        "model": { "type": "string", "minLength": 1 },
-        "vendor": { "type": ["string", "null"] },
-        "license": { "enum": ["proprietary", "open", null] },
-        "score": { "type": ["number", "null"] },
-        "ci": { "type": ["number", "null"] },
-        "votes": { "type": ["integer", "null"] }
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vendor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license": {
+          "enum": [
+            "proprietary",
+            "open",
+            null
+          ]
+        },
+        "score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ci": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "votes": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "model_display": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     }
   }

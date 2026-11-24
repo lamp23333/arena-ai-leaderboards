@@ -20,6 +20,7 @@ Outputs per run:
 import io
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -145,15 +146,33 @@ def detect_columns(names):
     return cols
 
 
+def model_slug(display):
+    """'Gemini 4 Carbon (High)' -> 'gemini-4-carbon-high' (matches historical naming)."""
+    s = display.strip().lower().replace("&", "and")
+    suffix = ""
+    m = re.search(r"\(([^)]*)\)\s*$", s)
+    if m:
+        suffix = m.group(1).strip()
+        s = s[: m.start()].strip()
+    s = s.replace(".", "-").replace("/", "-")
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    if suffix:
+        suffix = re.sub(r"[^a-z0-9]+", "-", suffix).strip("-")
+        s = (s + "-" + suffix) if s else suffix
+    return s
+
+
 def row_to_model(row, cols, rank):
     score = to_float(row.get(cols["score"])) if cols["score"] else None
     lo = to_float(row.get(cols["lower"])) if cols["lower"] else None
     hi = to_float(row.get(cols["upper"])) if cols["upper"] else None
     ci = round((hi - lo) / 2.0, 4) if (lo is not None and hi is not None) else None
-    model = row.get(cols["model"]) if cols["model"] else None
+    raw_model = row.get(cols["model"]) if cols["model"] else None
+    display = str(raw_model) if raw_model is not None else ""
     return {
         "rank": rank,
-        "model": str(model) if model is not None else "",
+        "model": model_slug(display) or display.lower() or "unknown",
+        "model_display": display or None,
         "vendor": (str(row.get(cols["org"])) if cols["org"] and row.get(cols["org"]) is not None else None),
         "license": norm_license(row.get(cols["license"])) if cols["license"] else None,
         "score": score,
@@ -189,7 +208,7 @@ def build_boards(config, rows):
 
     def build(selection):
         items = [row_to_model(r, cols, 0) for r in selection]
-        items = [m for m in items if m["model"]]
+        items = [m for m in items if m["model_display"]]
         items.sort(key=sort_key)
         for idx, m in enumerate(items, 1):
             m["rank"] = idx

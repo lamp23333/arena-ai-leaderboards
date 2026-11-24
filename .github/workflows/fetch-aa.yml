@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: FetchArtificial Analysis intelligence index
+      - name: Fetch Artificial Analysis intelligence index
         env:
           AA_API_KEY: ${{ secrets.AA_API_KEY }}
         run: python scripts/fetch_aa.py

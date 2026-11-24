@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-24",
+  "fetched_at": "2026-11-24T11:28:39.391192+00:00",
+  "leaderboards": {
+    "agent": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22"
+    },
+    "agent-bash-recovery-steps": {
+      "model_count": 52,
+      "rows": 52,
+      "categories": 1,
+      "publish_date": "2026-10-08"
+    },
+    "agent-bash-reliability": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22"
+    },
+    "agent-capability": {
+      "model_count": 69,
+      "rows": 276,
+      "categories": 4,
+      "publish_date": "2026-11-22"
+    },
+    "agent-praise-complaint": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22"
+    },
+    "agent-steerability": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22"
+    },
+    "agent-task-outcome": {
+      "model_count": 69,
+      "rows": 276,
+      "categories": 4,
+      "publish_date": "2026-11-22"
+    },
+    "agent-task-outcome-explicit": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22"
+    },
+    "agent-tool-efficiency": {
+      "model_count": 69,
+      "rows": 276,
+      "categories": 4,
+      "publish_date": "2026-11-22"
+    },
+    "agent-tool-hallucination": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22"
+    },
+    "document": {
+      "model_count": 46,
+      "rows": 46,
+      "categories": 1,
+      "publish_date": "2026-11-09"
+    },
+    "document-style-control": {
+      "model_count": 46,
+      "rows": 46,
+      "categories": 1,
+      "publish_date": "2026-11-09"
+    },
+    "image-edit": {
+      "model_count": 64,
+      "rows": 156,
+      "categories": 4,
+      "publish_date": "2026-11-17"
+    },
+    "image-to-video": {
+      "model_count": 50,
+      "rows": 50,
+      "categories": 1,
+      "publish_date": "2026-11-09"
+    },
+    "search": {
+      "model_count": 45,
+      "rows": 45,
+      "categories": 1,
+      "publish_date": "2026-11-19"
+    },
+    "search-factuality": {
+      "model_count": 43,
+      "rows": 43,
+      "categories": 1,
+      "publish_date": "2026-11-19"
+    },
+    "search-style-control": {
+      "model_count": 45,
+      "rows": 45,
+      "categories": 1,
+      "publish_date": "2026-11-19"
+    },
+    "text": {
+      "model_count": 427,
+      "rows": 11320,
+      "categories": 29,
+      "publish_date": "2026-11-22"
+    },
+    "text-factuality": {
+      "model_count": 196,
+      "rows": 4187,
+      "categories": 29,
+      "publish_date": "2026-11-22"
+    },
+    "text-style-control": {
+      "model_count": 427,
+      "rows": 11320,
+      "categories": 29,
+      "publish_date": "2026-11-22"
+    },
+    "text-to-image": {
+      "model_count": 87,
+      "rows": 752,
+      "categories": 12,
+      "publish_date": "2026-11-20"
+    },
+    "text-to-video": {
+      "model_count": 50,
+      "rows": 50,
+      "categories": 1,
+      "publish_date": "2026-11-09"
+    },
+    "video-edit": {
+      "model_count": 12,
+      "rows": 12,
+      "categories": 1,
+      "publish_date": "2026-11-10"
+    },
+    "vision": {
+      "model_count": 168,
+      "rows": 1164,
+      "categories": 11,
+      "publish_date": "2026-11-19"
+    },
+    "vision-style-control": {
+      "model_count": 168,
+      "rows": 1164,
+      "categories": 11,
+      "publish_date": "2026-11-19"
+    },
+    "webdev": {
+      "model_count": 162,
+      "rows": 700,
+      "categories": 5,
+      "publish_date": "2026-11-23"
+    }
+  },
+  "errors": []
+}

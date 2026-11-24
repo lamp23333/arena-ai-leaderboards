@@ -1,0 +1,587 @@
+{
+  "meta": {
+    "leaderboard": "image-edit",
+    "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+    "fetched_at": "2026-11-24T11:28:39.391192+00:00",
+    "last_updated": "2026-11-17",
+    "model_count": 64
+  },
+  "models": [
+    {
+      "rank": 1,
+      "model": "GPT-Image-2.5 Sunburst",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1518.6233652795484,
+      "ci": 4.4225,
+      "votes": 140743
+    },
+    {
+      "rank": 2,
+      "model": "GPT-Image-2.5 Flare",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1483.615663343985,
+      "ci": 4.2395,
+      "votes": 137820
+    },
+    {
+      "rank": 3,
+      "model": "GPT-Image-2.6 Sunburst (Medium)",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1480.710585744545,
+      "ci": 6.9871,
+      "votes": 16881
+    },
+    {
+      "rank": 4,
+      "model": "MAI-Image-2.7",
+      "vendor": "microsoft-ai",
+      "license": "proprietary",
+      "score": 1475.4840107459195,
+      "ci": 11.0222,
+      "votes": 3007
+    },
+    {
+      "rank": 5,
+      "model": "GPT-Image-2 (Medium)",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1461.5215232235455,
+      "ci": 2.9391,
+      "votes": 371930
+    },
+    {
+      "rank": 6,
+      "model": "GPT-Image-2.6 Flare (Medium)",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1460.6949345559856,
+      "ci": 6.7781,
+      "votes": 16830
+    },
+    {
+      "rank": 7,
+      "model": "Grok Imagine Image 2.0",
+      "vendor": "xai",
+      "license": "proprietary",
+      "score": 1437.3657179279428,
+      "ci": 5.7641,
+      "votes": 33908
+    },
+    {
+      "rank": 8,
+      "model": "MAI-Image-2.6",
+      "vendor": "microsoft-ai",
+      "license": "proprietary",
+      "score": 1427.4354155739982,
+      "ci": 4.6623,
+      "votes": 82671
+    },
+    {
+      "rank": 9,
+      "model": "Gemini Nano Banana 2.1",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1427.173066493851,
+      "ci": 5.9628,
+      "votes": 12041
+    },
+    {
+      "rank": 10,
+      "model": "Grok Imagine Image 2.0 (20260801)",
+      "vendor": "xai",
+      "license": "proprietary",
+      "score": 1418.6106998089936,
+      "ci": 3.9826,
+      "votes": 144482
+    },
+    {
+      "rank": 11,
+      "model": "Krea 3 Ultra",
+      "vendor": "krea",
+      "license": "proprietary",
+      "score": 1411.6904835518642,
+      "ci": 11.5573,
+      "votes": 2625
+    },
+    {
+      "rank": 12,
+      "model": "MAI-Image-2.5",
+      "vendor": "microsoft-ai",
+      "license": "proprietary",
+      "score": 1400.3009257094982,
+      "ci": 3.7542,
+      "votes": 183259
+    },
+    {
+      "rank": 13,
+      "model": "Muse Image",
+      "vendor": "meta",
+      "license": "proprietary",
+      "score": 1399.9934770396303,
+      "ci": 3.6496,
+      "votes": 211112
+    },
+    {
+      "rank": 14,
+      "model": "Seedream 5.0 Pro",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1391.9489501087908,
+      "ci": 3.0794,
+      "votes": 358335
+    },
+    {
+      "rank": 15,
+      "model": "Grok Imagine Image (Quality, 20260519)",
+      "vendor": "xai",
+      "license": "proprietary",
+      "score": 1391.2187813358676,
+      "ci": 5.6498,
+      "votes": 37096
+    },
+    {
+      "rank": 16,
+      "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1390.7734983803769,
+      "ci": 2.5489,
+      "votes": 682032
+    },
+    {
+      "rank": 17,
+      "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1387.4765551591909,
+      "ci": 2.6518,
+      "votes": 657235
+    },
+    {
+      "rank": 18,
+      "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1386.8670122618041,
+      "ci": 3.0989,
+      "votes": 268179
+    },
+    {
+      "rank": 19,
+      "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1384.812846618806,
+      "ci": 2.8717,
+      "votes": 532373
+    },
+    {
+      "rank": 20,
+      "model": "Reve 2.1",
+      "vendor": "reve",
+      "license": "proprietary",
+      "score": 1372.7770448823326,
+      "ci": 6.1453,
+      "votes": 19872
+    },
+    {
+      "rank": 21,
+      "model": "GPT-Image-1.5 (High Fidelity)",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1367.2581614312512,
+      "ci": 2.5886,
+      "votes": 682072
+    },
+    {
+      "rank": 22,
+      "model": "Qwen-Image-2.1",
+      "vendor": "alibaba",
+      "license": "open",
+      "score": 1363.2486405127295,
+      "ci": 6.1451,
+      "votes": 37959
+    },
+    {
+      "rank": 23,
+      "model": "Reve 2.0",
+      "vendor": "reve",
+      "license": "proprietary",
+      "score": 1359.1404622638918,
+      "ci": 6.5265,
+      "votes": 18599
+    },
+    {
+      "rank": 24,
+      "model": "MiniMax H3-Image",
+      "vendor": "minimax",
+      "license": "open",
+      "score": 1358.1838775695321,
+      "ci": 8.9634,
+      "votes": 5134
+    },
+    {
+      "rank": 25,
+      "model": "Ideogram 4.5",
+      "vendor": "ideogram",
+      "license": "proprietary",
+      "score": 1346.7885859029318,
+      "ci": 4.0751,
+      "votes": 120488
+    },
+    {
+      "rank": 26,
+      "model": "UNI-1.1 Max",
+      "vendor": "luma-ai",
+      "license": "proprietary",
+      "score": 1332.9073153602883,
+      "ci": 4.9394,
+      "votes": 42183
+    },
+    {
+      "rank": 27,
+      "model": "Grok Imagine Image",
+      "vendor": "xai",
+      "license": "proprietary",
+      "score": 1328.595396076944,
+      "ci": 2.348,
+      "votes": 859790
+    },
+    {
+      "rank": 28,
+      "model": "UNI-1.1",
+      "vendor": "luma-ai",
+      "license": "proprietary",
+      "score": 1315.2753858480887,
+      "ci": 3.1335,
+      "votes": 255691
+    },
+    {
+      "rank": 29,
+      "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1312.7306653653623,
+      "ci": 4.801,
+      "votes": 63104
+    },
+    {
+      "rank": 30,
+      "model": "Qwen-Image-2.0-Pro (2026-06-22)",
+      "vendor": "alibaba",
+      "license": "proprietary",
+      "score": 1302.7867180116145,
+      "ci": 4.6989,
+      "votes": 54544
+    },
+    {
+      "rank": 31,
+      "model": "Seedream 4.5",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1302.5200691317916,
+      "ci": 2.1538,
+      "votes": 1357015
+    },
+    {
+      "rank": 32,
+      "model": "Wan 2.7 Image Pro",
+      "vendor": "alibaba",
+      "license": "proprietary",
+      "score": 1302.136892969027,
+      "ci": 4.1026,
+      "votes": 42974
+    },
+    {
+      "rank": 33,
+      "model": "HunyuanImage 3.0 Instruct",
+      "vendor": "tencent",
+      "license": "open",
+      "score": 1301.3916552743328,
+      "ci": 3.3613,
+      "votes": 322277
+    },
+    {
+      "rank": 34,
+      "model": "Wan 2.7 Image",
+      "vendor": "alibaba",
+      "license": "proprietary",
+      "score": 1300.7966126304523,
+      "ci": 3.869,
+      "votes": 43778
+    },
+    {
+      "rank": 35,
+      "model": "Seedream 5.0 Lite",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1293.4042191565206,
+      "ci": 2.5245,
+      "votes": 535784
+    },
+    {
+      "rank": 36,
+      "model": "Gemini 2.5 Flash Image Preview (nano-banana)",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1291.5848040484182,
+      "ci": 2.0448,
+      "votes": 11418324
+    },
+    {
+      "rank": 37,
+      "model": "Seedream 4.0 (2K)",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1267.0421614243814,
+      "ci": 6.955,
+      "votes": 208459
+    },
+    {
+      "rank": 38,
+      "model": "FLUX.2 [max]",
+      "vendor": "bfl",
+      "license": "proprietary",
+      "score": 1261.6704579804216,
+      "ci": 3.1632,
+      "votes": 367252
+    },
+    {
+      "rank": 39,
+      "model": "Reve v1.1",
+      "vendor": "reve",
+      "license": "proprietary",
+      "score": 1261.4854621932252,
+      "ci": 2.7643,
+      "votes": 657507
+    },
+    {
+      "rank": 40,
+      "model": "Kling Image O1",
+      "vendor": "kling",
+      "license": "proprietary",
+      "score": 1250.445518270144,
+      "ci": 3.7089,
+      "votes": 140038
+    },
+    {
+      "rank": 41,
+      "model": "FLUX.2 [pro]",
+      "vendor": "bfl",
+      "license": "proprietary",
+      "score": 1247.5374921417147,
+      "ci": 2.5719,
+      "votes": 669593
+    },
+    {
+      "rank": 42,
+      "model": "Qwen-Image-Edit",
+      "vendor": "alibaba",
+      "license": "open",
+      "score": 1240.8749682325022,
+      "ci": 2.62,
+      "votes": 1999135
+    },
+    {
+      "rank": 43,
+      "model": "Reve v1",
+      "vendor": "reve",
+      "license": "proprietary",
+      "score": 1234.5930578187613,
+      "ci": 4.988,
+      "votes": 390803
+    },
+    {
+      "rank": 44,
+      "model": "Qwen-Image-Edit (2511)",
+      "vendor": "alibaba",
+      "license": "open",
+      "score": 1233.061580328503,
+      "ci": 2.7927,
+      "votes": 471692
+    },
+    {
+      "rank": 45,
+      "model": "Wan 2.6 Image",
+      "vendor": "alibaba",
+      "license": "proprietary",
+      "score": 1231.1704478553356,
+      "ci": 2.5979,
+      "votes": 708328
+    },
+    {
+      "rank": 46,
+      "model": "FLUX.2 [flex]",
+      "vendor": "bfl",
+      "license": "proprietary",
+      "score": 1224.4187304516383,
+      "ci": 3.1559,
+      "votes": 433419
+    },
+    {
+      "rank": 47,
+      "model": "FLUX.2 [klein] 9B",
+      "vendor": "bfl",
+      "license": "open",
+      "score": 1224.4043399324887,
+      "ci": 2.8932,
+      "votes": 528140
+    },
+    {
+      "rank": 48,
+      "model": "FLUX.2 [dev]",
+      "vendor": "bfl",
+      "license": "open",
+      "score": 1223.9336179732522,
+      "ci": 4.0163,
+      "votes": 247274
+    },
+    {
+      "rank": 49,
+      "model": "Seedream 4.0 (High Res, fal)",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1215.72766496063,
+      "ci": 2.8154,
+      "votes": 1211154
+    },
+    {
+      "rank": 50,
+      "model": "P-Image-Edit",
+      "vendor": "",
+      "license": "proprietary",
+      "score": 1209.651672674309,
+      "ci": 3.1703,
+      "votes": 351346
+    },
+    {
+      "rank": 51,
+      "model": "Seedream 4.0 (fal)",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1209.4145412627954,
+      "ci": 6.15,
+      "votes": 151399
+    },
+    {
+      "rank": 52,
+      "model": "Reve v1.1 Fast",
+      "vendor": "reve",
+      "license": "proprietary",
+      "score": 1206.6629600865674,
+      "ci": 3.0364,
+      "votes": 540930
+    },
+    {
+      "rank": 53,
+      "model": "Reve Edit Fast",
+      "vendor": "reve",
+      "license": "proprietary",
+      "score": 1198.0043363300847,
+      "ci": 4.1601,
+      "votes": 227254
+    },
+    {
+      "rank": 54,
+      "model": "FLUX.2 [klein] 4B",
+      "vendor": "bfl",
+      "license": "open",
+      "score": 1187.1200412138883,
+      "ci": 2.9111,
+      "votes": 528947
+    },
+    {
+      "rank": 55,
+      "model": "FLUX.1 Kontext [max]",
+      "vendor": "bfl",
+      "license": "proprietary",
+      "score": 1182.106767019324,
+      "ci": 2.8202,
+      "votes": 390680
+    },
+    {
+      "rank": 56,
+      "model": "Wan 2.5 Preview",
+      "vendor": "alibaba",
+      "license": "proprietary",
+      "score": 1179.7386233229581,
+      "ci": 2.6757,
+      "votes": 699527
+    },
+    {
+      "rank": 57,
+      "model": "FLUX.1 Kontext [pro]",
+      "vendor": "bfl",
+      "license": "proprietary",
+      "score": 1177.3059292502662,
+      "ci": 2.691,
+      "votes": 6388991
+    },
+    {
+      "rank": 58,
+      "model": "FLUX.1 Kontext [dev]",
+      "vendor": "bfl",
+      "license": "open",
+      "score": 1150.21809561986,
+      "ci": 3.4992,
+      "votes": 3630147
+    },
+    {
+      "rank": 59,
+      "model": "SeedEdit 3.0",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1139.0939950529053,
+      "ci": 3.7909,
+      "votes": 4911423
+    },
+    {
+      "rank": 60,
+      "model": "GPT-Image-1",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1138.7502843732873,
+      "ci": 2.7548,
+      "votes": 2857359
+    },
+    {
+      "rank": 61,
+      "model": "GPT-Image-1 mini",
+      "vendor": "openai",
+      "license": "proprietary",
+      "score": 1124.018167457873,
+      "ci": 2.9583,
+      "votes": 671725
+    },
+    {
+      "rank": 62,
+      "model": "Gemini 2.0 Flash Preview Image Generation",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1081.8898543636556,
+      "ci": 2.4493,
+      "votes": 4933374
+    },
+    {
+      "rank": 63,
+      "model": "BAGEL",
+      "vendor": "bytedance",
+      "license": "open",
+      "score": 1026.6369922151282,
+      "ci": 5.7605,
+      "votes": 13478
+    },
+    {
+      "rank": 64,
+      "model": "Step1X-Edit",
+      "vendor": "stepfun",
+      "license": "open",
+      "score": 996.137005778477,
+      "ci": 4.5664,
+      "votes": 155311
+    }
+  ]
+}

@@ -22,38 +22,68 @@ def fetch(u, t=60):
 
 st, body = fetch("https://artificialanalysis.ai/")
 txt = body.decode("utf-8", "replace")
-print("page", st, len(txt))
-
-# RSC payload chunks: self.__next_f.push([1,"..."]) -> unescape to recover embedded JSON
 chunks = re.findall(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)', txt, re.S)
-print("RSC_CHUNKS", len(chunks))
 blob = ""
 for c in chunks:
     try:
         blob += json.loads('"' + c + '"')
     except Exception:
         pass
+
 print("BLOB_LEN", len(blob))
 
-# find model objects: they carry slug + name + intelligenceIndex
-objs = re.findall(r'\{"slug":"([a-z0-9\-]{2,50})","name":"([^"]{1,60})"([^{}]{0,4000}?)"intelligenceIndex":([0-9.]+)', blob)
-print("MODEL_OBJS", len(objs))
-for slug, name, mid, ii in objs[:5]:
-    extra = ""
-    for k in ("isOpenWeights", "parameters", "score", "omniscienceAccuracy"):
-        m = re.search(r'"' + k + r'":([^,\}]*)', mid)
-        if m:
-            extra += f" {k}={m.group(1)}"
-    print(f"  {slug:34s} {name[:26]:26s} II={float(ii):.1f}{extra}")
+pairs = []
+for m in re.finditer(r'"intelligenceIndex":([0-9.eE\-]+)', blob):
+    pos = m.start()
+    back = blob[max(0, pos - 2500):pos]
+    sm = None
+    last = list(re.finditer(r'"slug":"([a-z0-9\-\.]{2,50})"', back))
+    if last:
+        sm = last[-1].group(1)
+    nm = list(re.finditer(r'"name":"([^"]{1,70})"', back))
+    nmv = nm[-1].group(1) if nm else None
+    if sm:
+        pairs.append((sm, nmv, m.group(1)))
 
-# also count any 'slug' occurrences to see coverage
-all_slugs = set(re.findall(r'"slug":"([a-z0-9\-]{2,50})"', blob))
-print("DISTINCT_SLUGS", len(all_slugs))
-field_pool = set()
-for m in re.finditer(r'"([a-zA-Z][a-zA-Z0-9]{2,30})":', blob):
-    field_pool.add(m.group(1))
-key_fields = [f for f in field_pool if any(k in f.lower() for k in ("intelligence", "score", "index", "elo", "accuracy", "tokens", "price", "released"))]
-print("FIELDS_SAMPLE", sorted(key_fields)[:28])
+print("PAIRS", len(pairs))
+seen = set()
+uniq = []
+for s, n, v in pairs:
+    if s in seen:
+        continue
+    seen.add(s)
+    uniq.append((s, n, v))
+print("UNIQUE", len(uniq))
+for s, n, v in uniq[:12]:
+    print(f"  {s:32s} {str(n)[:26]:26s} II={v}")
+
+# dump one full object by brace balancing from the '{' nearest before the slug
+if uniq:
+    target = uniq[0][0]
+    idx = blob.find('"slug":"' + target + '"')
+    start = blob.rfind("{", 0, idx)
+    depth = 0
+    end = start
+    for i in range(start, min(len(blob), start + 12000)):
+        ch = blob[i]
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                end = i + 1
+                break
+    obj = blob[start:end]
+    print("OBJ_LEN", len(obj))
+    print("OBJ_HEAD", obj[:1200])
+
+print("### sitemap leaderboard paths ###")
+st, sb = fetch("https://arena.ai/sitemap.xml")
+locs = re.findall(r"<loc>([^<]+)</loc>", sb.decode("utf-8", "replace"))
+lbs = [l.replace("https://arena.ai", "") for l in locs if "/leaderboard" in l]
+print("LB", len(lbs))
+for l in lbs:
+    print("  P", l)
 
 sys.stdout.flush()
 os._exit(0)

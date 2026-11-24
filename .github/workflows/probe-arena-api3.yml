@@ -15,17 +15,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: robots + sitemap digest
+      - name: dig robots sitemap and nextjs-api
         run: python .github/probe_arena3.py
-      - name: nextjs-api candidates
-        run: |
-          set +e
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-          for u in             "https://arena.ai/nextjs-api/leaderboard"             "https://arena.ai/nextjs-api/leaderboards"             "https://arena.ai/nextjs-api/leaderboard/chat/text"             "https://arena.ai/nextjs-api/leaderboard?name=text" ; do
-            code=$(curl -sSL -m 20 -o /tmp/o -w "%{http_code}" -A "$UA" -H "Accept: application/json" "$u")
-            size=$(wc -c < /tmp/o)
-            echo "== $u -> $code (${size}b)"
-            head -c 200 /tmp/o | tr -d "
-"
-            echo
-          done

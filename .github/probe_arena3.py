@@ -1,34 +1,39 @@
-import re, urllib.request
+import re
+import urllib.request
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"}
 
+
 def get(u, t=30):
-    return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t).read().decode("utf-8", "replace")
+    req = urllib.request.Request(u, headers=UA)
+    return urllib.request.urlopen(req, timeout=t).read().decode("utf-8", "replace")
+
 
 robots = get("https://arena.ai/robots.txt")
-print("ROBOTS bytes:", len(robots))
-lbs = [l.strip() for l in robots.splitlines() if "leaderboard" in l]
-print("LB_RULES:", len(lbs))
-for l in lbs:
-    print("   ", l)
-other = [l.strip() for l in robots.splitlines() if l.strip().startswith(("Sitemap", "Disallow", "Crawl"))]
-print("OTHER:", len(other))
-for l in other[:15]:
-    print("   ", l)
+print("ROBOTS_BYTES", len(robots))
+for line in robots.splitlines():
+    s = line.strip()
+    if "leaderboard" in s or s.startswith(("Sitemap", "Disallow", "Crawl")):
+        print("  R", s)
 
 sm = get("https://arena.ai/sitemap.xml")
-print("SITEMAP bytes:", len(sm))
+print("SITEMAP_BYTES", len(sm))
 locs = re.findall(r"<loc>(.*?)</loc>", sm)
 lastmods = re.findall(r"<lastmod>(.*?)</lastmod>", sm)
-print("URLS:", len(locs), "LASTMODS:", len(lastmods))
+print("URLS", len(locs), "LASTMODS", len(lastmods))
 if lastmods:
-    print("NEWEST_LASTMOD:", max(lastmods), "OLDEST:", min(lastmods))
+    print("NEWEST", max(lastmods), "OLDEST", min(lastmods))
 lb = [u for u in locs if "leaderboard" in u]
-print("LB_URLS:", len(lb))
+print("LB_URLS", len(lb))
 for u in lb[:14]:
-    print("   ", u)
-pairs = re.findall(r"<url>\s*<loc>(.*?)</loc>\s*(?:<lastmod>(.*?)</lastmod>)?", sm)
-lbp = [(u, m) for u, m in pairs if "leaderboard" in u]
-print("LB_PAIRS:", len(lbp))
-for u, m in lbp[:8]:
-    print("   ", m or "-", u)
+    print("  U", u)
+
+for u in ["https://arena.ai/nextjs-api/leaderboard",
+          "https://arena.ai/nextjs-api/leaderboards",
+          "https://arena.ai/nextjs-api/leaderboard/chat/text",
+          "https://arena.ai/nextjs-api/leaderboard?name=text"]:
+    try:
+        body = get(u, 20)
+        print("API", u, "OK", len(body), body[:120].replace(chr(10), " "))
+    except Exception as e:
+        print("API", u, "ERR", type(e).__name__, str(e)[:90])

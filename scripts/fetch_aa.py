@@ -181,25 +181,44 @@ def normalize(obj):
     }
 
 
-def collect_from_page():
-    status, body = fetch(PAGE_URL)
-    if status != 200:
-        raise RuntimeError("page http " + str(status))
-    blob = rsc_blob(body.decode("utf-8", "replace"))
-    if not blob:
-        raise RuntimeError("empty rsc payload")
-    decoder = json.JSONDecoder()
-    seen = {}
-    hits = [m.start() for m in re.finditer(r'"intelligence[_A-Za-z]*"\s*:', blob)]
-    for pos in hits:
-        if len(seen) > 5:
-            break
-        start = blob.rfind("{", max(0, pos - 4000), pos)
-        while start >= 0:
+def harvest(blob, decoder, seen):
+    """Pull models out of the RSC payload.
+
+    Model objects live inside JSON arrays (e.g. "models":[{...},{...}]).
+    Decoding a whole array at once is far more reliable than guessing
+    object boundaries, so try every array first, then fall back to
+    walking backwards from each intelligence-index key.
+    """
+    for m in re.finditer(r'"[A-Za-z_]{2,24}"\s*:\s*\[', blob):
+        start = blob.find("[", m.start())
+        if start < 0:
+            continue
+        try:
+            arr, _end = decoder.raw_decode(blob, start)
+        except Exception:
+            continue
+        if not isinstance(arr, list) or len(arr) < 2:
+            continue
+        bucket = []
+        collect_model_dicts(arr, bucket)
+        for one in bucket:
+            item = normalize(one)
+            if item:
+                seen[item["model"]] = item
+
+    if seen:
+        return
+
+    for m in re.finditer(r'"intelligence[_A-Za-z]*"\s*:', blob):
+        pos = m.start()
+        start = blob.rfind("{", max(0, pos - 6000), pos)
+        tries = 0
+        while start >= 0 and tries < 8:
+            tries += 1
             try:
                 obj, _end = decoder.raw_decode(blob, start)
             except Exception:
-                start = blob.rfind("{", max(0, pos - 4000), start)
+                start = blob.rfind("{", max(0, pos - 6000), start)
                 continue
             bucket = []
             collect_model_dicts(obj, bucket)
@@ -208,6 +227,17 @@ def collect_from_page():
                 if item:
                     seen[item["model"]] = item
             break
+
+
+def collect_from_page():
+    status, body = fetch(PAGE_URL)
+    if status != 200:
+        raise RuntimeError("page http " + str(status))
+    blob = rsc_blob(body.decode("utf-8", "replace"))
+    if not blob:
+        raise RuntimeError("empty rsc payload")
+    seen = {}
+    harvest(blob, json.JSONDecoder(), seen)
     return list(seen.values()), len(blob)
 
 

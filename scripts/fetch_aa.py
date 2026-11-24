@@ -188,11 +188,41 @@ def normalize(obj):
 def harvest(blob, decoder, seen):
     """Pull models out of the RSC payload.
 
-    Model objects live inside JSON arrays (e.g. "models":[{...},{...}]).
-    Decoding a whole array at once is far more reliable than guessing
-    object boundaries, so try every array first, then fall back to
-    walking backwards from each intelligence-index key.
+    Model objects live inside JSON arrays. The page ships two kinds:
+      - initialModels     : few objects, but complete (price, speed, context)
+      - comparableReleases: many objects, only slug/name/index
+    So collect rich and thin entries separately and let rich win.
     """
+    rich = {}
+    thin = {}
+    for m in re.finditer(r'"[A-Za-z_]{2,24}"\s*:\s*\[', blob):
+        start = blob.find("[", m.start())
+        if start < 0:
+            continue
+        try:
+            arr, _end = decoder.raw_decode(blob, start)
+        except Exception:
+            continue
+        if not isinstance(arr, list) or len(arr) < 2:
+            continue
+        bucket = []
+        collect_model_dicts(arr, bucket)
+        for one in bucket:
+            item = normalize(one)
+            if not item:
+                continue
+            if item.get("price_out") is not None or item.get("price_in") is not None:
+                rich[item["model"]] = item
+            else:
+                thin.setdefault(item["model"], item)
+
+    merged = dict(thin)
+    merged.update(rich)
+    seen.update(merged)
+    return
+
+
+def harvest_legacy(blob, decoder, seen):
     for m in re.finditer(r'"[A-Za-z_]{2,24}"\s*:\s*\[', blob):
         start = blob.find("[", m.start())
         if start < 0:

@@ -9,57 +9,49 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
       "Accept-Language": "en-US,en;q=0.9"}
 
 
-def fetch(u, t=60):
-    req = urllib.request.Request(u, headers=dict(UA))
+def fetch(u, extra=None, t=45):
+    h = dict(UA)
+    if extra:
+        h.update(extra)
+    req = urllib.request.Request(u, headers=h)
     try:
         with urllib.request.urlopen(req, timeout=t) as r:
-            return r.status, r.read()
+            return r.status, r.read(), dict(r.headers)
     except urllib.error.HTTPError as e:
-        return e.code, e.read()
+        return e.code, e.read(), dict(e.headers or {})
     except Exception as e:
-        return "ERR", str(e).encode()
+        return "ERR", str(e).encode(), {}
 
 
-def payload(html):
-    chunks = re.findall(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)', html, re.S)
-    blob = ""
-    for c in chunks:
-        try:
-            blob += json.loads('"' + c + '"')
-        except Exception:
-            pass
-    return blob
+print("### new v2 api without key ###")
+endpoints = [
+    "https://artificialanalysis.ai/api/v2/language/models",
+    "https://artificialanalysis.ai/api/v2/language/models?include=all",
+    "https://artificialanalysis.ai/api/v2/language/models/free",
+]
+for u in endpoints:
+    st, body, hd = fetch(u)
+    print("  EP", st, len(body), u.split("ai", 1)[-1])
+    print("     body:", body[:220].decode("utf-8", "replace").replace("\n", " "))
 
+print("### aa sitemap ###")
+st, body, hd = fetch("https://artificialanalysis.ai/sitemap.xml")
+print("  sitemap", st, len(body))
+if st == 200:
+    locs = re.findall(r"<loc>([^<]+)</loc>", body.decode("utf-8", "replace"))
+    print("  LOCS", len(locs))
+    models = [l for l in locs if "/models/" in l]
+    print("  MODEL_PAGES", len(models))
+    for l in models[:6]:
+        print("    M", l)
 
-def count_models(blob):
-    slugs = set()
-    for m in re.finditer(r'"intelligenceIndex":([0-9.eE\-]+)', blob):
-        back = blob[max(0, m.start() - 3000):m.start()]
-        last = list(re.finditer(r'"slug":"([a-z0-9\-\.]{2,50})"', back))
-        if last:
-            slugs.add(last[-1].group(1))
-    return slugs
-
-
-for path in ["/models", "/leaderboards", "/leaderboard", "/models/language", "/compare"]:
-    st, body = fetch("https://artificialanalysis.ai" + path)
-    if st != 200:
-        print("PATH", path, st, len(body))
-        continue
-    html = body.decode("utf-8", "replace")
-    blob = payload(html)
-    slugs = count_models(blob)
-    print("PATH", path, st, "html", len(html), "blob", len(blob), "models", len(slugs))
-    if slugs:
-        print("   sample", sorted(slugs)[:8])
-
-print("### sitemap video + agent paths ###")
-st, sb = fetch("https://arena.ai/sitemap.xml")
-locs = re.findall(r"<loc>([^<]+)</loc>", sb.decode("utf-8", "replace"))
-for l in locs:
-    p = l.replace("https://arena.ai", "")
-    if "/video" in p or "/agent" in p or "/leaderboard" == p:
-        print("  P", p)
+print("### robots ###")
+st, body, hd = fetch("https://artificialanalysis.ai/robots.txt")
+if st == 200:
+    txt = body.decode("utf-8", "replace")
+    for line in txt.splitlines():
+        if "sitemap" in line.lower() or "api" in line.lower():
+            print("  R", line.strip())
 
 sys.stdout.flush()
 os._exit(0)

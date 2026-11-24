@@ -1,0 +1,43 @@
+name: probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: plain curl arena.ai
+        run: |
+          set +e
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+          curl -sS -m 25 -o /tmp/arena.html -w "http=%{http_code} bytes=%{size_download} ip=%{remote_ip}\n" -A "$UA" https://arena.ai/leaderboard/
+          echo "--- head ---"
+          head -c 400 /tmp/arena.html; echo
+          echo "--- markers ---"
+          grep -io -m5 -e "you have been blocked" -e "just a moment" -e "enable javascript" -e "turnstile" -e "cf-chl" /tmp/arena.html || echo "NO_CF_MARKERS"
+          echo "--- slug links ---"
+          grep -o -m10 -E "arena\.ai/leaderboard/[a-z0-9-]+" /tmp/arena.html | sort -u || echo "NO_SLUGS"
+      - name: jina reader
+        run: |
+          set +e
+          curl -sS -m 45 -o /tmp/jina.txt -w "http=%{http_code} bytes=%{size_download}\n" -H "Accept: text/plain" -H "X-Return-Format: markdown" https://r.jina.ai/https://arena.ai/leaderboard/
+          echo "--- head ---"
+          head -c 600 /tmp/jina.txt; echo
+          echo "--- slug links ---"
+          grep -o -m10 -E "arena\.ai/leaderboard/[a-z0-9-]+" /tmp/jina.txt | sort -u || echo "NO_SLUGS"
+
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install playwright
+        run: pip install playwright && python -m playwright install --with-deps chromium
+      - name: visit arena.ai
+        run: python .github/probe_browser.py

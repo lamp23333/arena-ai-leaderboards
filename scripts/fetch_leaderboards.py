@@ -19,6 +19,33 @@ from jsonschema import Draft202012Validator
 JINA_READER_BASE = "https://r.jina.ai/"
 ARENA_BASE = "https://arena.ai/leaderboard/"
 
+# Fallback when the overview page can no longer be parsed (layout change, bot
+# challenge, etc.). Discovery still runs first so new boards are picked up.
+KNOWN_SLUGS = [
+    "agent", "code", "document", "image-edit", "image-to-video", "search",
+    "text", "text-to-image", "text-to-video", "video-edit", "vision",
+]
+
+# Substrings that mean we got an interstitial instead of the real page.
+BLOCK_MARKERS = (
+    "you have been blocked",
+    "attention required",
+    "just a moment",
+    "enable javascript and cookies to continue",
+    "verify you are human",
+    "cf-error-details",
+)
+
+
+def check_not_blocked(text: str, url: str) -> None:
+    """Raise if the reader handed us a bot-challenge / empty page instead of data."""
+    body = text.lower()
+    for marker in BLOCK_MARKERS:
+        if marker in body:
+            raise RuntimeError(f"bot-challenge page for {url} (marker: {marker!r})")
+    if len(text.strip()) < 200:
+        raise RuntimeError(f"near-empty page for {url} ({len(text.strip())} chars)")
+
 
 def fetch_page(url: str, jina_api_key: str | None = None) -> str:
     reader_url = f"{JINA_READER_BASE}{url}"
@@ -30,20 +57,27 @@ def fetch_page(url: str, jina_api_key: str | None = None) -> str:
     if jina_api_key:
         headers["Authorization"] = f"Bearer {jina_api_key}"
     req = urllib.request.Request(reader_url, headers=headers)
+    last_err: Exception | None = None
     for attempt in range(3):
         try:
             with urllib.request.urlopen(req, timeout=60) as resp:
-                return resp.read().decode("utf-8")
-        except urllib.error.URLError as e:
+                text = resp.read().decode("utf-8")
+            check_not_blocked(text, url)
+            return text
+        except (urllib.error.URLError, RuntimeError) as e:
+            last_err = e
             print(f"  Attempt {attempt+1} failed: {e}", file=sys.stderr)
             if attempt < 2:
                 time.sleep(5 * (attempt + 1))
-    raise RuntimeError(f"Failed to fetch {url} after 3 attempts")
+    raise RuntimeError(f"Failed to fetch {url} after 3 attempts: {last_err}")
 
 
 def discover_leaderboards(overview_text: str) -> list[tuple[str, str]]:
     pattern = r'arena\.ai/leaderboard/([a-z][a-z0-9-]*)'
     slugs = sorted(set(re.findall(pattern, overview_text)))
+    if not slugs:
+        print("  WARN: overview yielded no slugs, falling back to KNOWN_SLUGS", file=sys.stderr)
+        slugs = sorted(KNOWN_SLUGS)
     return [(s, s) for s in slugs]
 
 
@@ -287,6 +321,10 @@ def main():
     overview_text = fetch_page(ARENA_BASE, jina_key)
     leaderboards = discover_leaderboards(overview_text)
     print(f"Found {len(leaderboards)} leaderboards: {[s for s, _ in leaderboards]}", file=sys.stderr)
+    if not leaderboards:
+        print("ERROR: discovered 0 leaderboards, refusing to write an empty snapshot", file=sys.stderr)
+        sys.exit(1)
+
     now = datetime.now(timezone.utc)
     date_str = now.strftime("%Y-%m-%d")
     day_dir = repo_root / "data" / date_str
@@ -324,6 +362,7 @@ def main():
     idx_errors = list(idx_validator.iter_errors(index))
     if idx_errors:
         print(f"  ❌ Index schema invalid: {idx_errors[0].message}", file=sys.stderr)
+        sys.exit(1)
     if errors:
         for e in errors:
             print(f"  {e['leaderboard']}: {e['error']}", file=sys.stderr)

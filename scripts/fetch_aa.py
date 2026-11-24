@@ -233,6 +233,39 @@ def harvest(blob, decoder, seen):
             break
 
 
+MERGE_FIELDS = ("price_in", "price_out", "speed", "context", "effort",
+                "open_weights", "release_date", "name_full")
+
+
+def merge_variants(items):
+    """One row per model.
+
+    The page ships several objects per model (one per effort variant like
+    high/xhigh and one condensed entry). Keep the highest scoring variant
+    as the row and borrow any missing fields from the others.
+    """
+    merged = {}
+    for item in items:
+        key = item["model"]
+        cur = merged.get(key)
+        if cur is None:
+            item["variants"] = 1
+            merged[key] = item
+            continue
+        cur["variants"] = cur.get("variants", 1) + 1
+        if item["index"] > cur["index"]:
+            for field in MERGE_FIELDS:
+                if item.get(field) is None and cur.get(field) is not None:
+                    item[field] = cur[field]
+            item["variants"] = cur["variants"]
+            merged[key] = item
+        else:
+            for field in MERGE_FIELDS:
+                if cur.get(field) is None and item.get(field) is not None:
+                    cur[field] = item[field]
+    return list(merged.values())
+
+
 def collect_from_page():
     status, body = fetch(PAGE_URL)
     if status != 200:
@@ -287,6 +320,7 @@ def main():
         print("no models parsed")
         return 1
 
+    models = merge_variants(models)
     models.sort(key=lambda item: item["index"], reverse=True)
     for rank, item in enumerate(models, 1):
         item["rank"] = rank

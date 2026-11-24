@@ -1,0 +1,42 @@
+name: probe-arena-api
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: try arena.ai endpoints (html / api / robots / old domain)
+        run: |
+          set +e
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+          for u in \
+            "https://arena.ai/robots.txt" \
+            "https://arena.ai/sitemap.xml" \
+            "https://arena.ai/api/leaderboard?name=text" \
+            "https://arena.ai/api/leaderboards" \
+            "https://arena.ai/api/v1/leaderboard?name=text" \
+            "https://arena.ai/leaderboard/text" \
+            "https://lmarena.ai/leaderboard" \
+            "https://www.arena.ai/leaderboard/" ; do
+            code=$(curl -sSL -m 25 -o /tmp/o -w "%{http_code}" -A "$UA" -H "Accept: application/json, text/html;q=0.9" "$u")
+            size=$(wc -c < /tmp/o)
+            echo "== $u -> $code (${size}b)"
+            head -c 180 /tmp/o | tr -d "\n"
+            echo
+            echo "--"
+          done
+      - name: huggingface dataset freshness
+        run: |
+          set +e
+          echo "== dataset meta =="
+          curl -sS -m 40 https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('lastModified:', d.get('lastModified')); print('createdAt:', d.get('createdAt')); print('downloads:', d.get('downloads'))"
+          echo "== convert branch tree (text) =="
+          curl -sS -m 40 "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/refs%2Fconvert%2Fparquet/text/latest" | head -c 400
+          echo

@@ -332,7 +332,9 @@ def main():
             (all_dir / (slug + ".json")).write_text(json.dumps(all_payload, indent=2, ensure_ascii=False) + "\n")
 
             summary[slug] = {"model_count": max(len(overall), 1), "rows": len(rows),
-                             "categories": len(slices), "publish_date": publish_date}
+                             "categories": len(slices), "publish_date": publish_date,
+                             # 分类名清单，前端据此渲染分类切换，无需先下全量文件
+                             "category_list": sorted(slices)}
             if note:
                 summary[slug]["note"] = note
             boards_for_md[slug] = {"meta": all_payload["meta"], "categories": sorted(slices), "overall": overall}

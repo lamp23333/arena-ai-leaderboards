@@ -1,0 +1,81 @@
+{
+ "date": "2026-11-24",
+ "source": "page",
+ "fetched_at": "2026-11-24T13:07:03Z",
+ "doc": "https://artificialanalysis.ai/data-api",
+ "model_count": 6,
+ "models": [
+  {
+   "model": "gemini-4-neon",
+   "model_display": "Gemini 4 Neon",
+   "vendor": "google",
+   "index": 61.4,
+   "price_in": null,
+   "price_out": null,
+   "speed": null,
+   "open_weights": null,
+   "release_date": "2026-11-18",
+   "rank": 1
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "model_display": "Claude Sonnet 5.5",
+   "vendor": "anthropic",
+   "index": 54.54,
+   "price_in": null,
+   "price_out": null,
+   "speed": null,
+   "open_weights": null,
+   "release_date": "2026-09-28",
+   "rank": 2
+  },
+  {
+   "model": "step-5-preview",
+   "model_display": "Step 5 Preview",
+   "vendor": "stepfun",
+   "index": 28.53,
+   "price_in": null,
+   "price_out": null,
+   "speed": null,
+   "open_weights": null,
+   "release_date": "2026-09-18",
+   "rank": 3
+  },
+  {
+   "model": "apodex-1-1",
+   "model_display": "Apodex 1.1",
+   "vendor": "apodex",
+   "index": 13.67,
+   "price_in": null,
+   "price_out": null,
+   "speed": null,
+   "open_weights": null,
+   "release_date": "2026-08-30",
+   "rank": 4
+  },
+  {
+   "model": "gemini-3-5-flash-lite",
+   "model_display": "Gemini 3.5 Flash-Lite",
+   "vendor": "google",
+   "index": 11.66,
+   "price_in": null,
+   "price_out": null,
+   "speed": null,
+   "open_weights": null,
+   "release_date": "2026-07-21",
+   "rank": 5
+  },
+  {
+   "model": "granite-4-2-3b",
+   "model_display": "Granite 4.2 3B",
+   "vendor": "ibm",
+   "index": 4.72,
+   "price_in": null,
+   "price_out": null,
+   "speed": null,
+   "open_weights": null,
+   "release_date": "2026-08-25",
+   "rank": 6
+  }
+ ]
+}

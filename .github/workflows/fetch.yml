@@ -1,11 +1,8 @@
 name: Fetch Arena Leaderboards
 
 on:
-  # cron disabled: arena.ai answers GitHub-hosted runners with a Cloudflare bot
-  # challenge (HTTP 403 / "Just a moment..."), so every scheduled run could only
-  # fail. Restore the block below once a working fetch path is in place.
-  # schedule:
-  #   - cron: '37 1 * * *'  # Daily at 01:37 UTC (09:37 CST)
+  schedule:
+    - cron: '37 1 * * *'  # Daily at 01:37 UTC (09:37 CST)
   workflow_dispatch:       # Manual trigger
 
 permissions:
@@ -14,31 +11,25 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install jsonschema
+        run: pip install jsonschema pyarrow
 
-      - name: Fetch leaderboards
-        env:
-          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
-          AZURE_ENDPOINT: ${{ secrets.AZURE_ENDPOINT }}
-          AZURE_DEPLOYMENT: ${{ secrets.AZURE_DEPLOYMENT }}
-          AZURE_API_VERSION: ${{ secrets.AZURE_API_VERSION }}
-        run: python scripts/fetch_leaderboards.py
+      - name: Fetch leaderboards from HuggingFace dataset
+        run: python scripts/fetch_hf.py
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ BOARDS.md
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
@@ -46,5 +37,3 @@ jobs:
             git commit -m "data: update leaderboards $DATE"
             git push
           fi
-
-

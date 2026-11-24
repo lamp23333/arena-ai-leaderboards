@@ -1,0 +1,44 @@
+name: probe-arena-api2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: dig robots sitemap and candidate endpoints
+        run: |
+          set +e
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+          echo "=== ROBOTS ==="
+          curl -sSL -m 25 -A "$UA" https://arena.ai/robots.txt | head -c 1400
+          echo
+          echo "=== SITEMAP HEAD ==="
+          curl -sSL -m 25 -A "$UA" https://arena.ai/sitemap.xml | head -c 1200
+          echo
+          echo "=== 403 BODY (api/leaderboards) ==="
+          curl -sSL -m 25 -A "$UA" -H "Accept: application/json" https://arena.ai/api/leaderboards -o /tmp/b -w "code=%{http_code} type=%{content_type}\n"
+          cat /tmp/b | head -c 300
+          echo
+          echo "=== CANDIDATES ==="
+          for u in \
+            "https://api.arena.ai/leaderboard" \
+            "https://api.arena.ai/v1/leaderboards" \
+            "https://arena.ai/api/health" \
+            "https://arena.ai/manifest.json" \
+            "https://arena.ai/leaderboard/text.json" \
+            "https://arena.ai/_next/static/chunks/main.js" ; do
+            code=$(curl -sSL -m 20 -o /tmp/o -w "%{http_code}" -A "$UA" "$u")
+            size=$(wc -c < /tmp/o)
+            echo "-- $u -> $code (${size}b)"
+            head -c 120 /tmp/o | tr -d "\n"
+            echo
+          done
+          echo "=== HF text/full tree ==="
+          curl -sS -m 40 "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/refs%2Fconvert%2Fparquet/text/full" | head -c 700
+          echo

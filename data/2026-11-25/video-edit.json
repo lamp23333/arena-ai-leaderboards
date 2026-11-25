@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "leaderboard": "video-edit",
+    "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+    "fetched_at": "2026-11-25T10:23:43.919579+00:00",
+    "last_updated": "2026-11-10",
+    "model_count": 12
+  },
+  "models": [
+    {
+      "rank": 1,
+      "model": "wan-3-0",
+      "model_display": "Wan 3.0",
+      "vendor": "alibaba",
+      "license": "proprietary",
+      "score": 1423.6790981613326,
+      "ci": 13.8074,
+      "votes": 2062
+    },
+    {
+      "rank": 2,
+      "model": "dreamina-seedance-2-5-720p",
+      "model_display": "Dreamina Seedance 2.5 (720p)",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1418.782187516684,
+      "ci": 12.0615,
+      "votes": 5227
+    },
+    {
+      "rank": 3,
+      "model": "gemini-omni-1-2-flash",
+      "model_display": "Gemini Omni 1.2 Flash",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1395.6437478978598,
+      "ci": 16.4496,
+      "votes": 1167
+    },
+    {
+      "rank": 4,
+      "model": "gemini-omni-flash",
+      "model_display": "gemini-omni-flash",
+      "vendor": "google",
+      "license": "proprietary",
+      "score": 1380.4652216675597,
+      "ci": 11.5499,
+      "votes": 5052
+    },
+    {
+      "rank": 5,
+      "model": "minimax-h3",
+      "model_display": "MiniMax H3",
+      "vendor": "minimax",
+      "license": "open",
+      "score": 1378.414319580833,
+      "ci": 9.5149,
+      "votes": 8385
+    },
+    {
+      "rank": 6,
+      "model": "dreamina-seedance-2-0-720p",
+      "model_display": "Dreamina Seedance 2.0 (720p)",
+      "vendor": "bytedance",
+      "license": "proprietary",
+      "score": 1368.0401905386868,
+      "ci": 10.7202,
+      "votes": 7388
+    },
+    {
+      "rank": 7,
+      "model": "skyreels-v4",
+      "model_display": "SkyReels V4",
+      "vendor": "skyreel",
+      "license": "proprietary",
+      "score": 1363.5240891960332,
+      "ci": 21.0031,
+      "votes": 697
+    },
+    {
+      "rank": 8,
+      "model": "happyhorse-1-0",
+      "model_display": "HappyHorse 1.0",
+      "vendor": "aorizon",
+      "license": "proprietary",
+      "score": 1305.6902329743698,
+      "ci": 13.4598,
+      "votes": 3253
+    },
+    {
+      "rank": 9,
+      "model": "kling-o3-pro",
+      "model_display": "Kling O3 Pro",
+      "vendor": "kling",
+      "license": "proprietary",
+      "score": 1265.682460451023,
+      "ci": 8.3622,
+      "votes": 14611
+    },
+    {
+      "rank": 10,
+      "model": "grok-imagine-video",
+      "model_display": "Grok Imagine Video",
+      "vendor": "xai",
+      "license": "proprietary",
+      "score": 1249.844001846882,
+      "ci": 9.1155,
+      "votes": 18726
+    },
+    {
+      "rank": 11,
+      "model": "kling-o1-pro",
+      "model_display": "Kling O1 Pro",
+      "vendor": "kling",
+      "license": "proprietary",
+      "score": 1189.6633394716794,
+      "ci": 8.2311,
+      "votes": 17696
+    },
+    {
+      "rank": 12,
+      "model": "runway-gen-4-aleph",
+      "model_display": "Runway Gen-4 Aleph",
+      "vendor": "runway",
+      "license": "proprietary",
+      "score": 1181.578495321052,
+      "ci": 8.5328,
+      "votes": 10159
+    }
+  ]
+}

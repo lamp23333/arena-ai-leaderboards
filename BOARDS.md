@@ -1,6 +1,6 @@
 # LMArena leaderboards — auto-generated overview
 
-Source: [lmarena-ai/leaderboard-dataset](https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset) · fetched at `2026-11-25T10:23:43.919579+00:00`
+Source: [lmarena-ai/leaderboard-dataset](https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset) · fetched at `2026-11-26T10:00:05.874828+00:00`
 
 Data files: `data/<date>/<slug>.json` (overall) and `data/<date>/all/<slug>.json` (every category).
 
@@ -397,37 +397,37 @@ publish date `2026-11-10` · 12 rows · categories: overall
 
 ## vision
 
-publish date `2026-11-19` · 1164 rows · categories: captioning, chinese, creative_writing, creative_writing_vision, diagram, english, entity_recognition, homework, humor, ocr, overall
+publish date `2026-11-25` · 1176 rows · categories: captioning, chinese, creative_writing, creative_writing_vision, diagram, english, entity_recognition, homework, humor, ocr, overall
 
 | # | model | vendor | score | ±ci | votes |
 |---|---|---|---|---|---|
-| 1 | claude-fable-5-high | anthropic | 1325.01 | 6.85 | 15449 |
-| 2 | claude-fable-5-1-max | anthropic | 1322.0 | 8.16 | 7185 |
-| 3 | claude-opus-5-5-high | anthropic | 1321.83 | 9.16 | 5903 |
-| 4 | claude-opus-4-7 | anthropic | 1317.43 | 6.31 | 24930 |
-| 5 | claude-opus-5-high | anthropic | 1317.27 | 6.43 | 19229 |
-| 6 | gemini-3-8-flash-high | google | 1316.41 | 7.52 | 9782 |
-| 7 | claude-opus-4-6-high | anthropic | 1315.09 | 6.3 | 22067 |
-| 8 | claude-opus-4-7-high | anthropic | 1313.71 | 6.48 | 22530 |
-| 9 | gemini-3-7-flash-high | google | 1313.64 | 8.48 | 6776 |
-| 10 | claude-fable-5-2-max | anthropic | 1313.31 | 18.15 | 1176 |
+| 1 | claude-fable-5-high | anthropic | 1325.7 | 6.84 | 15428 |
+| 2 | claude-fable-5-1-max | anthropic | 1320.8 | 7.99 | 7598 |
+| 3 | claude-opus-5-5-high | anthropic | 1320.73 | 8.87 | 6457 |
+| 4 | claude-opus-4-7 | anthropic | 1317.62 | 6.22 | 25450 |
+| 5 | claude-opus-5-high | anthropic | 1316.98 | 6.41 | 19202 |
+| 6 | gemini-3-8-flash-high | google | 1315.65 | 7.3 | 10812 |
+| 7 | claude-opus-4-6-high | anthropic | 1315.13 | 6.29 | 22041 |
+| 8 | gemini-3-7-flash-high | google | 1313.89 | 8.48 | 6769 |
+| 9 | claude-opus-4-7-high | anthropic | 1313.72 | 6.46 | 22504 |
+| 10 | claude-opus-4-6 | anthropic | 1312.04 | 6.16 | 26527 |
 
 ## vision-style-control
 
-publish date `2026-11-19` · 1164 rows · categories: captioning, chinese, creative_writing, creative_writing_vision, diagram, english, entity_recognition, homework, humor, ocr, overall
+publish date `2026-11-25` · 1176 rows · categories: captioning, chinese, creative_writing, creative_writing_vision, diagram, english, entity_recognition, homework, humor, ocr, overall
 
 | # | model | vendor | score | ±ci | votes |
 |---|---|---|---|---|---|
-| 1 | claude-fable-5-high | anthropic | 1308.75 | 6.87 | 15449 |
-| 2 | claude-fable-5-2-max | anthropic | 1305.28 | 18.2 | 1176 |
-| 3 | claude-opus-4-7 | anthropic | 1298.68 | 6.33 | 24930 |
-| 4 | claude-opus-4-6-high | anthropic | 1298.22 | 6.35 | 22067 |
-| 5 | claude-opus-4-7-high | anthropic | 1298.02 | 6.5 | 22530 |
-| 6 | gemini-3-7-flash-high | google | 1294.2 | 8.53 | 6776 |
-| 7 | muse-spark | meta | 1294.04 | 9.05 | 5835 |
-| 8 | qwen3-8-max | alibaba | 1293.73 | 7.3 | 10833 |
-| 9 | claude-opus-5-5-high | anthropic | 1293.22 | 9.21 | 5903 |
-| 10 | muse-spark-1-2-xhigh | meta | 1292.98 | 14.38 | 1922 |
+| 1 | claude-fable-5-high | anthropic | 1309.35 | 6.86 | 15428 |
+| 2 | claude-fable-5-2-max | anthropic | 1302.13 | 15.0 | 1776 |
+| 3 | claude-opus-4-7 | anthropic | 1298.86 | 6.25 | 25450 |
+| 4 | claude-opus-4-6-high | anthropic | 1298.09 | 6.34 | 22041 |
+| 5 | claude-opus-4-7-high | anthropic | 1297.88 | 6.49 | 22504 |
+| 6 | qwen3-8-max | alibaba | 1294.58 | 7.1 | 11466 |
+| 7 | gemini-3-7-flash-high | google | 1294.31 | 8.52 | 6769 |
+| 8 | muse-spark | meta | 1294.18 | 9.05 | 5824 |
+| 9 | claude-opus-4-6 | anthropic | 1292.79 | 6.21 | 26527 |
+| 10 | muse-spark-1-2-xhigh | meta | 1292.76 | 14.38 | 1921 |
 
 ## webdev
 

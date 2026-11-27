@@ -1,0 +1,372 @@
+{
+  "date": "2026-11-27",
+  "fetched_at": "2026-11-27T10:05:26.779584+00:00",
+  "leaderboards": {
+    "agent": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "agent-bash-recovery-steps": {
+      "model_count": 52,
+      "rows": 52,
+      "categories": 1,
+      "publish_date": "2026-10-08",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "agent-bash-reliability": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "agent-capability": {
+      "model_count": 69,
+      "rows": 276,
+      "categories": 4,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "chat",
+        "code",
+        "overall",
+        "work"
+      ]
+    },
+    "agent-praise-complaint": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "agent-steerability": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "agent-task-outcome": {
+      "model_count": 69,
+      "rows": 276,
+      "categories": 4,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "chat",
+        "code",
+        "overall",
+        "work"
+      ]
+    },
+    "agent-task-outcome-explicit": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "agent-tool-efficiency": {
+      "model_count": 69,
+      "rows": 276,
+      "categories": 4,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "chat",
+        "code",
+        "overall",
+        "work"
+      ]
+    },
+    "agent-tool-hallucination": {
+      "model_count": 69,
+      "rows": 69,
+      "categories": 1,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "document": {
+      "model_count": 46,
+      "rows": 46,
+      "categories": 1,
+      "publish_date": "2026-11-09",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "document-style-control": {
+      "model_count": 46,
+      "rows": 46,
+      "categories": 1,
+      "publish_date": "2026-11-09",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "image-edit": {
+      "model_count": 64,
+      "rows": 156,
+      "categories": 4,
+      "publish_date": "2026-11-17",
+      "category_list": [
+        "agentic",
+        "multi_image_edit",
+        "multi_image_edit_agentic",
+        "overall"
+      ]
+    },
+    "image-to-video": {
+      "model_count": 50,
+      "rows": 50,
+      "categories": 1,
+      "publish_date": "2026-11-09",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "search": {
+      "model_count": 45,
+      "rows": 45,
+      "categories": 1,
+      "publish_date": "2026-11-19",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "search-factuality": {
+      "model_count": 43,
+      "rows": 43,
+      "categories": 1,
+      "publish_date": "2026-11-19",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "search-style-control": {
+      "model_count": 45,
+      "rows": 45,
+      "categories": 1,
+      "publish_date": "2026-11-19",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "text": {
+      "model_count": 427,
+      "rows": 11320,
+      "categories": 29,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "chinese",
+        "coding",
+        "creative_writing",
+        "english",
+        "exclude_ties",
+        "expert",
+        "french",
+        "german",
+        "hard_prompts",
+        "hard_prompts_english",
+        "industry_business_and_management_and_financial_operations",
+        "industry_entertainment_and_sports_and_media",
+        "industry_legal_and_government",
+        "industry_life_and_physical_and_social_science",
+        "industry_mathematical",
+        "industry_medicine_and_healthcare",
+        "industry_software_and_it_services",
+        "industry_writing_and_literature_and_language",
+        "instruction_following",
+        "japanese",
+        "korean",
+        "longer_query",
+        "math",
+        "multi_turn",
+        "non_english",
+        "overall",
+        "polish",
+        "russian",
+        "spanish"
+      ]
+    },
+    "text-factuality": {
+      "model_count": 196,
+      "rows": 4187,
+      "categories": 29,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "chinese",
+        "coding",
+        "creative_writing",
+        "english",
+        "exclude_ties",
+        "expert",
+        "french",
+        "german",
+        "hard_prompts",
+        "hard_prompts_english",
+        "industry_business_and_management_and_financial_operations",
+        "industry_entertainment_and_sports_and_media",
+        "industry_legal_and_government",
+        "industry_life_and_physical_and_social_science",
+        "industry_mathematical",
+        "industry_medicine_and_healthcare",
+        "industry_software_and_it_services",
+        "industry_writing_and_literature_and_language",
+        "instruction_following",
+        "japanese",
+        "korean",
+        "longer_query",
+        "math",
+        "multi_turn",
+        "non_english",
+        "overall",
+        "polish",
+        "russian",
+        "spanish"
+      ]
+    },
+    "text-style-control": {
+      "model_count": 427,
+      "rows": 11320,
+      "categories": 29,
+      "publish_date": "2026-11-22",
+      "category_list": [
+        "chinese",
+        "coding",
+        "creative_writing",
+        "english",
+        "exclude_ties",
+        "expert",
+        "french",
+        "german",
+        "hard_prompts",
+        "hard_prompts_english",
+        "industry_business_and_management_and_financial_operations",
+        "industry_entertainment_and_sports_and_media",
+        "industry_legal_and_government",
+        "industry_life_and_physical_and_social_science",
+        "industry_mathematical",
+        "industry_medicine_and_healthcare",
+        "industry_software_and_it_services",
+        "industry_writing_and_literature_and_language",
+        "instruction_following",
+        "japanese",
+        "korean",
+        "longer_query",
+        "math",
+        "multi_turn",
+        "non_english",
+        "overall",
+        "polish",
+        "russian",
+        "spanish"
+      ]
+    },
+    "text-to-image": {
+      "model_count": 87,
+      "rows": 752,
+      "categories": 12,
+      "publish_date": "2026-11-20",
+      "category_list": [
+        "3d_modeling",
+        "agentic",
+        "art",
+        "cartoon",
+        "chinese",
+        "commercial_design",
+        "english",
+        "overall",
+        "photorealistic",
+        "portraits",
+        "russian",
+        "text_rendering"
+      ]
+    },
+    "text-to-video": {
+      "model_count": 50,
+      "rows": 50,
+      "categories": 1,
+      "publish_date": "2026-11-09",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "video-edit": {
+      "model_count": 12,
+      "rows": 12,
+      "categories": 1,
+      "publish_date": "2026-11-10",
+      "category_list": [
+        "overall"
+      ]
+    },
+    "vision": {
+      "model_count": 170,
+      "rows": 1176,
+      "categories": 11,
+      "publish_date": "2026-11-25",
+      "category_list": [
+        "captioning",
+        "chinese",
+        "creative_writing",
+        "creative_writing_vision",
+        "diagram",
+        "english",
+        "entity_recognition",
+        "homework",
+        "humor",
+        "ocr",
+        "overall"
+      ]
+    },
+    "vision-style-control": {
+      "model_count": 170,
+      "rows": 1176,
+      "categories": 11,
+      "publish_date": "2026-11-25",
+      "category_list": [
+        "captioning",
+        "chinese",
+        "creative_writing",
+        "creative_writing_vision",
+        "diagram",
+        "english",
+        "entity_recognition",
+        "homework",
+        "humor",
+        "ocr",
+        "overall"
+      ]
+    },
+    "webdev": {
+      "model_count": 162,
+      "rows": 700,
+      "categories": 5,
+      "publish_date": "2026-11-23",
+      "category_list": [
+        "image_to_webdev",
+        "overall",
+        "webdev",
+        "webdev-html",
+        "webdev-react"
+      ]
+    }
+  },
+  "errors": []
+}

@@ -1,6 +1,6 @@
 # LMArena leaderboards — auto-generated overview
 
-Source: [lmarena-ai/leaderboard-dataset](https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset) · fetched at `2026-11-27T10:05:26.779584+00:00`
+Source: [lmarena-ai/leaderboard-dataset](https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset) · fetched at `2026-11-28T09:23:24.124885+00:00`
 
 Data files: `data/<date>/<slug>.json` (overall) and `data/<date>/all/<slug>.json` (every category).
 
